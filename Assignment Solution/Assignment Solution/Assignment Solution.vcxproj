@@ -131,10 +131,10 @@
     <ClCompile Include="Debug.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ClInclude Include="Debug.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Debug.h" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

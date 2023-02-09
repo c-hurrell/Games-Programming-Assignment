@@ -20,7 +20,6 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     Debug Debug;
-    cout << "Hello World!\n";
 
     if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
         return 1;
