@@ -7,7 +7,7 @@
 
 using namespace std;
 
-static class Debug
+class Debug
 {
 public:
 	Debug();

@@ -18,13 +18,14 @@
 
 
 // ============== LOG METHODS =================
-
+#pragma region Log_Methods
 void Debug::Log(string message)
 {
 	if (active != false)
 	{
+		// Colour; Text to be outputted in that colour;
 		SetColour(6); cout << "[" << GetTime() << "]"; // Time is always in yellow
-		SetColour(13); cout << " <::> " << message << endl; // Set to a light cyan
+		SetColour(13); cout << " <::> " << message << endl; // Set to Magenta
 		SetColour();
 	}
 }
@@ -34,15 +35,14 @@ void Debug::Log(string message, double value)
 	if (active != false)
 	{
 		SetColour(6); cout << "[" << GetTime() << "]";
-		SetColour(13); // Sets colour to magenta
-		cout << " <==> " << message << " : ";
+		SetColour(13); cout << " <==> " << message << " : ";
 		SetColour(11);  cout << value << endl;
 		SetColour();
 	}
 }
 //void Debug::Log(node Node, string message)
 
-
+#pragma endregion
 
 // ===== ERROR, WARNING AND TOGGLE METHODS =====
 

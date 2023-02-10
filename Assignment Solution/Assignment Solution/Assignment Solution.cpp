@@ -11,6 +11,8 @@
 // Debug Library for debugging game
 #include "Debug.h" 
 
+#include "EngineManager.h"
+
 using namespace std;
 
 // Constants
@@ -20,12 +22,34 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     Debug Debug;
+    EngineManager Engine;
+
     Debug.SetDebugActive();
 
-    if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
-        return 1;
+    SDL_Window* window;
 
-    SDL_Window* window = SDL_CreateWindow("Test Window!", 250, 250, 800, 600, SDL_WINDOW_SHOWN);
+    if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
+        Debug.Error("Something went wrong...");
+    }
+
+    window = SDL_CreateWindow("AliEngine", 250, 250, 800, 600, SDL_WINDOW_SHOWN);
+    SDL_Event event;
+    while (true) { // SDL loop
+        while (SDL_PollEvent(&event) != 0) {
+            if (event.type == SDL_QUIT) {
+                // Ctrl + C in console !
+            }
+        } // end of handling event.
+    }
+
+
+
+    //Engine.Init();
+
+    //if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
+       // return 1;
+
+    //SDL_Window* window = SDL_CreateWindow("Test Window!", 250, 250, 800, 600, SDL_WINDOW_SHOWN);
 
     // SDL_RenderClear
 
