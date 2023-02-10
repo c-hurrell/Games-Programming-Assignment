@@ -15,11 +15,12 @@ using namespace std;
 
 // Constants
 
-#define DELAY 3000
+#define DELAY 5000
 
 int main(int argc, char *argv[])
 {
     Debug Debug;
+    Debug.SetDebugActive();
 
     if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
         return 1;
@@ -28,15 +29,21 @@ int main(int argc, char *argv[])
 
     // SDL_RenderClear
 
-    Debug.Log("Help");
+    Debug.Log("Information");
+    Debug.Log("Value", 10);
 
+    Debug.Warning();
     Debug.Error();
+
+    
 
     SDL_Delay(DELAY);
     
     SDL_DestroyWindow(window);
 
     SDL_Quit();
+
+    Debug.SetDebugActive(false);
     return 0;
 }
 

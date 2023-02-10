@@ -3,19 +3,25 @@
 #include<vector>
 #include<iostream>
 #include<windows.h>
+#include<sstream>
 
 using namespace std;
 
-class Debug
+static class Debug
 {
 public:
-	void Log(string message = "This code runs");
+	Debug();
+	bool active;
+	void SetDebugActive(bool active = true);
+	void Log(string message = "Test");
 	void Log(string message, double value);
 	// void Log(Node capturedNode, string message = "Node Captured") // Will test when a node has been registered as captured
-	void Error(string message = "Error details unknown");
+	void Error(string message = "Error");
+	void Warning(string message = "Warning");
 
 private:
-	void setColour(int colour = 15);
+	void SetColour(int colour = 15);
+	string GetTime();
 	
 };
 

@@ -129,9 +129,11 @@
   <ItemGroup>
     <ClCompile Include="Assignment Solution.cpp" />
     <ClCompile Include="Debug.cpp" />
+    <ClCompile Include="EngineManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Debug.h" />
+    <ClInclude Include="EngineManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
