@@ -21,26 +21,26 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    Debug Debug;
     EngineManager Engine;
 
-    Debug.SetDebugActive();
+    Debug::SetDebugActive();
 
-    SDL_Window* window;
+    Engine.Init();
+    //SDL_Window* window;
 
-    if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
-        Debug.Error("Something went wrong...");
-    }
+    //if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
+    //    Debug::Error("Something went wrong...");
+    //}
 
-    window = SDL_CreateWindow("AliEngine", 250, 250, 800, 600, SDL_WINDOW_SHOWN);
-    SDL_Event event;
-    while (true) { // SDL loop
-        while (SDL_PollEvent(&event) != 0) {
-            if (event.type == SDL_QUIT) {
-                // Ctrl + C in console !
-            }
-        } // end of handling event.
-    }
+    //window = SDL_CreateWindow("AliEngine", 250, 250, 800, 600, SDL_WINDOW_SHOWN);
+    //SDL_Event event;
+    //while (true) { // SDL loop
+    //    while (SDL_PollEvent(&event) != 0) {
+    //        if (event.type == SDL_QUIT) {
+    //            // Ctrl + C in console !
+    //        }
+    //    } // end of handling event.
+    //}
 
 
 
@@ -53,21 +53,13 @@ int main(int argc, char *argv[])
 
     // SDL_RenderClear
 
-    Debug.Log("Information");
-    Debug.Log("Value", 10);
+    Debug::Log("Information");
+    Debug::Log("Value", 10);
 
-    Debug.Warning();
-    Debug.Error();
+    Debug::Warning();
+    Debug::Error();
 
-    
-
-    SDL_Delay(DELAY);
-    
-    SDL_DestroyWindow(window);
-
-    SDL_Quit();
-
-    Debug.SetDebugActive(false);
+    Debug::SetDebugActive(false);
     return 0;
 }
 

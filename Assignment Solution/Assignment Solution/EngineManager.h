@@ -1,6 +1,8 @@
 #pragma once
 #include "SDL.h"
 #include "Debug.h"
+
+#define DELAY 5000
 class EngineManager
 {
 public:
@@ -11,7 +13,6 @@ public:
 	
 	bool IsRunning();
 
-	Debug debug;
 
 private:
 	bool Running();

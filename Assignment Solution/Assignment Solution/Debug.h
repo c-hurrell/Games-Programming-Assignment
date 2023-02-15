@@ -5,23 +5,20 @@
 #include<windows.h>
 #include<sstream>
 
-using namespace std;
 
-class Debug
+
+namespace Debug
 {
-public:
-	Debug();
-	bool active;
+	// extern bool active = false;
 	void SetDebugActive(bool active = true);
-	void Log(string message = "Test");
-	void Log(string message, double value);
+	void Log(std::string message = "Test");
+	void Log(std::string message, double value);
 	// void Log(Node capturedNode, string message = "Node Captured") // Will test when a node has been registered as captured
-	void Error(string message = "Error");
-	void Warning(string message = "Warning");
+	void Error(std::string message = "Error");
+	void Warning(std::string message = "Warning");
 
-private:
 	void SetColour(int colour = 15);
-	string GetTime();
+	std::string GetTime();
 	
 };
 

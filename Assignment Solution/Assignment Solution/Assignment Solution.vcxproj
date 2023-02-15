@@ -128,12 +128,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Assignment Solution.cpp" />
+    <ClCompile Include="Behaviour.cpp" />
     <ClCompile Include="Debug.cpp" />
     <ClCompile Include="EngineManager.cpp" />
+    <ClCompile Include="Object.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Behaviour.h" />
     <ClInclude Include="Debug.h" />
     <ClInclude Include="EngineManager.h" />
+    <ClInclude Include="Object.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
