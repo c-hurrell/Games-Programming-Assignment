@@ -1,4 +1,5 @@
-#ifndef Object
+#ifndef OBJECT_H
+#define OBJECT_H
 
 #include <iostream>
 #include <string>
@@ -6,7 +7,7 @@
 #include "Behaviour.h"
 using namespace std;
 
-class Object
+class GameObject
 {
 	string tag;
 	vector<Behaviour> behaviours;

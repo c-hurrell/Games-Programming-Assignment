@@ -1,4 +1,5 @@
-#pragma once
+#ifndef DEBUG_H
+#define DEBUG_H
 #include<string>
 #include<vector>
 #include<iostream>
@@ -21,4 +22,5 @@ namespace Debug
 	std::string GetTime();
 	
 };
+#endif
 

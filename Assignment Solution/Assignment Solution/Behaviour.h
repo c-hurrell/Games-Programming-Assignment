@@ -1,11 +1,11 @@
-#ifndef Behaviour
+#ifndef BEHAVIOUR_H
+#define BEHAVIOUR_H
 
 #include <vector>
 #include <iostream>
 #include <string>
 #include "Debug.h"
 using namespace std;
-using namespace Debug;
 
 class Behaviour
 {

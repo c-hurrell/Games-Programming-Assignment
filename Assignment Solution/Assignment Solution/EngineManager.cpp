@@ -16,6 +16,7 @@ void EngineManager::Init()
     }
 
     window = SDL_CreateWindow("AliEngine", 250, 250, 800, 600, SDL_WINDOW_SHOWN);
+    Debug::Log("AliEngine window launched");
     SDL_Event event;
     while (true) { // SDL loop
         while (SDL_PollEvent(&event) != 0) {

@@ -1,4 +1,6 @@
-#pragma once
+#ifndef ENGINEMANAGER_H
+#define ENGINEMANAGER_H
+
 #include "SDL.h"
 #include "Debug.h"
 
@@ -19,4 +21,5 @@ private:
 	SDL_Window* window;
 	SDL_Renderer* renderer;
 };
+#endif
 
