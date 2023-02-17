@@ -127,17 +127,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AliEngine.cpp" />
     <ClCompile Include="Assignment Solution.cpp" />
     <ClCompile Include="Behaviour.cpp" />
     <ClCompile Include="Debug.cpp" />
     <ClCompile Include="EngineManager.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ShapeRendering.cpp" />
+    <ClCompile Include="SZ_Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AliEngine.h" />
     <ClInclude Include="Behaviour.h" />
     <ClInclude Include="Debug.h" />
     <ClInclude Include="EngineManager.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="ShapeRendering.h" />
+    <ClInclude Include="SZ_Timer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

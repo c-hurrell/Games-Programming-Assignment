@@ -10,7 +10,8 @@
 
 namespace Debug
 {
-	// extern bool active = false;
+	extern bool active;
+
 	void SetDebugActive(bool active = true);
 	void Log(std::string message = "Test");
 	void Log(std::string message, double value);

@@ -5,13 +5,10 @@
 #include <string>
 #include <vector>
 
-// SDL2 Library
-#include "SDL.h"
-
-// Debug Library for debugging game
-#include "Debug.h" 
-
-#include "EngineManager.h"
+#include "AliEngine.h"
+SZ_Timer aTimer;
+const int DELTA_TIME = 50;
+bool done = false;
 
 using namespace std;
 
@@ -23,9 +20,58 @@ int main(int argc, char *argv[])
 {
     EngineManager Engine;
 
-    Debug::SetDebugActive();
+    //Debug::SetDebugActive();
 
     Engine.Init();
+
+    SDL_Rect r = ShapeRendering::Rectangle(0, 0, 50, 50);
+
+    while (!done)
+    {
+        aTimer.resetTicksTimer(); // resets a frame timer to zero
+
+        //merge of render and update, as example.
+        SDL_SetRenderDrawColor(Engine.renderer, 0, 0, 20, SDL_ALPHA_OPAQUE);
+        //clear the screen
+        SDL_RenderClear(Engine.renderer);
+
+
+        Engine.Input();
+        Engine.Update();
+        Engine.Render();
+        
+
+        // Tests the frame rate limiter
+        
+        r.x++;
+        SDL_SetRenderDrawColor(Engine.renderer, 0, 255, 0, 255);
+        SDL_RenderDrawRect(Engine.renderer, &r);
+
+        SDL_RenderPresent(Engine.renderer);
+
+
+        if (aTimer.getTicks() < DELTA_TIME)
+        {
+            //Debug::Log("Ticks are", aTimer.getTicks());
+            SDL_Delay(DELTA_TIME - aTimer.getTicks());
+            //Debug::Log("Delay", DELTA_TIME - aTimer.getTicks());
+            if ((DELTA_TIME - aTimer.getTicks()) < -50) {
+                Debug::Warning("Low frame rate");
+            }
+            
+        }
+        SDL_Event event;
+        while (SDL_PollEvent(&event) != 0) {
+            if (event.type == SDL_QUIT) {
+                Debug::Log("Exit Game...");
+                done = true;
+                // Ctrl + C in Console
+            }
+        } // end of handling event.
+
+    }
+    Engine.Exit();
+
     //SDL_Window* window;
 
     //if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
@@ -59,7 +105,7 @@ int main(int argc, char *argv[])
     Debug::Warning();
     Debug::Error();
 
-    Debug::SetDebugActive(false);
+    //Debug::SetDebugActive(false);
     return 0;
 }
 

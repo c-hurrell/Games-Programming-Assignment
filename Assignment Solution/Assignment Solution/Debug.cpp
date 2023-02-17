@@ -19,7 +19,7 @@ using namespace std;
 
 namespace Debug {
 
-	bool active = false;
+	bool Debug::active = false;
 	// ============== LOG METHODS =================
 #pragma region Log_Methods
 	void Debug::Log(string message)
