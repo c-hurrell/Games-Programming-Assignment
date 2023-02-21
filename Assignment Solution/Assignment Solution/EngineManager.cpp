@@ -25,7 +25,7 @@ void EngineManager::Init()
     Transform2D* testTransform = new Transform2D();
     testTransform->Object = test;
     test->AddComponent(testTransform);
-    test->GetComponent("Transform");
+    test->GetComponent("Transform2D");
 }
 void EngineManager::Input()
 {
