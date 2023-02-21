@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 {
     EngineManager Engine;
 
-    //Debug::SetDebugActive();
+    Debug::SetDebugActive();
 
     Engine.Init();
 

@@ -21,15 +21,11 @@ EngineManager::EngineManager()
 
 void EngineManager::Init()
 {
-    cout << "Init" << endl;
-    //SDL_Event event;
-    //while (true) { // SDL loop
-    //    while (SDL_PollEvent(&event) != 0) {
-    //        if (event.type == SDL_QUIT) {
-    //            // Ctrl + C in console !
-    //        }
-    //    } // end of handling event.
-    //}
+    GameObject* test = new GameObject();
+    Transform2D* testTransform = new Transform2D();
+    testTransform->Object = test;
+    test->AddComponent(testTransform);
+    test->GetComponent("Transform2D");
 }
 void EngineManager::Input()
 {
@@ -37,8 +33,9 @@ void EngineManager::Input()
     Debug::Error("Input Function not implemented");
     // ITS ALIVE
     // 0x51 = Q
+    // Change to SDL_KEYBOARD method
     if (GetKeyState(0x51) < 0) {
-        if (Debug::active == false && !debugToggle) {
+        if (!Debug::active && !debugToggle) {
             Debug::SetDebugActive();
            
         }

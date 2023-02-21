@@ -4,13 +4,26 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Behaviour.h"
+#include "Component.h"
 using namespace std;
+
+class Component;
 
 class GameObject
 {
-	string tag;
-	vector<Behaviour> behaviours;
+public:
+	GameObject();
+	~GameObject();
+
+	string tag = "default";
+	bool IsEnabled = true;
+
+	vector<Component*> components;
+	void AddComponent(Component *component);
+	void GetComponent(string tag);
+
+	void DestroySelf();
+	
 };
 
 #endif
