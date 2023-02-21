@@ -20,7 +20,7 @@ public:
 
 	vector<Component*> components;
 	void AddComponent(Component *component);
-	void GetComponent(string tag);
+	Component* GetComponent(string tag);
 
 	void DestroySelf();
 	
