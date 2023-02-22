@@ -1,8 +1,15 @@
 #include "Transform2D.h"
-Transform2D::Transform2D() : Component()
+
+Transform2D::Transform2D(double positionX, double positionY) : Component()
 {
 	tag = "Transform2D";
-};
+	posX = positionX;
+	posY = positionY;
+}
+Transform2D::~Transform2D()
+{
+}
+;
 #pragma region Game_Loop
 void Transform2D::Start()
 {
@@ -29,7 +36,7 @@ void Transform2D::SetPos(double newPosX, double newPosY)
 	posY = newPosY;
 }
 
-void Transform2D::RotateSelfToFaceObject(GameObject object)
+void Transform2D::RotateSelfToFaceObject(GameObject* object)
 {
 
 }

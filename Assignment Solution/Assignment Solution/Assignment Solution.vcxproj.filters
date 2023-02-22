@@ -87,7 +87,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Render2D.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

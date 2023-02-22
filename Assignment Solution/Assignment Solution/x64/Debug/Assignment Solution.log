@@ -1,85 +1,13 @@
 ﻿  AliEngine.cpp
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(7,1): error C2504: 'Component': base class undefined
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(29,33): error C2061: syntax error: identifier 'GameObject'
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(37,10): error C3668: 'Transform2D::Start': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(38,10): error C3668: 'Transform2D::Update': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(39,10): error C3668: 'Transform2D::Awake': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(8,1): error C2504: 'Component': base class undefined
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(9,10): error C3668: 'Render2D::Start': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(10,10): error C3668: 'Render2D::Update': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(11,10): error C3668: 'Render2D::Awake': method with override specifier 'override' did not override any base class methods
   Assignment Solution.cpp
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(7,1): error C2504: 'Component': base class undefined
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(29,33): error C2061: syntax error: identifier 'GameObject'
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(37,10): error C3668: 'Transform2D::Start': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(38,10): error C3668: 'Transform2D::Update': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(39,10): error C3668: 'Transform2D::Awake': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(8,1): error C2504: 'Component': base class undefined
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(9,10): error C3668: 'Render2D::Start': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(10,10): error C3668: 'Render2D::Update': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(11,10): error C3668: 'Render2D::Awake': method with override specifier 'override' did not override any base class methods
-  Collision.cpp
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(7,1): error C2504: 'Component': base class undefined
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(29,33): error C2061: syntax error: identifier 'GameObject'
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(37,10): error C3668: 'Transform2D::Start': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(38,10): error C3668: 'Transform2D::Update': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(39,10): error C3668: 'Transform2D::Awake': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(8,1): error C2504: 'Component': base class undefined
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(9,10): error C3668: 'Render2D::Start': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(10,10): error C3668: 'Render2D::Update': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(11,10): error C3668: 'Render2D::Awake': method with override specifier 'override' did not override any base class methods
-  Component.cpp
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(7,1): error C2504: 'Component': base class undefined
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(29,33): error C2061: syntax error: identifier 'GameObject'
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(37,10): error C3668: 'Transform2D::Start': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(38,10): error C3668: 'Transform2D::Update': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(39,10): error C3668: 'Transform2D::Awake': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(8,1): error C2504: 'Component': base class undefined
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(9,10): error C3668: 'Render2D::Start': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(10,10): error C3668: 'Render2D::Update': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(11,10): error C3668: 'Render2D::Awake': method with override specifier 'override' did not override any base class methods
   EngineManager.cpp
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(7,1): error C2504: 'Component': base class undefined
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(29,33): error C2061: syntax error: identifier 'GameObject'
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(37,10): error C3668: 'Transform2D::Start': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(38,10): error C3668: 'Transform2D::Update': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(39,10): error C3668: 'Transform2D::Awake': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(8,1): error C2504: 'Component': base class undefined
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(9,10): error C3668: 'Render2D::Start': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(10,10): error C3668: 'Render2D::Update': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(11,10): error C3668: 'Render2D::Awake': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\EngineManager.cpp(8,49): error C2572: 'EngineManager::EngineManager': redefinition of default argument: parameter 1
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\EngineManager.h(19,2): message : see declaration of 'EngineManager::EngineManager'
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\EngineManager.cpp(8,73): error C2572: 'EngineManager::EngineManager': redefinition of default argument: parameter 2
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\EngineManager.h(19,2): message : see declaration of 'EngineManager::EngineManager'
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\EngineManager.cpp(8,89): error C2572: 'EngineManager::EngineManager': redefinition of default argument: parameter 3
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\EngineManager.h(19,2): message : see declaration of 'EngineManager::EngineManager'
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\EngineManager.cpp(8,106): error C2572: 'EngineManager::EngineManager': redefinition of default argument: parameter 4
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\EngineManager.h(19,2): message : see declaration of 'EngineManager::EngineManager'
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\EngineManager.cpp(8,124): error C2572: 'EngineManager::EngineManager': redefinition of default argument: parameter 5
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\EngineManager.h(19,2): message : see declaration of 'EngineManager::EngineManager'
   Object.cpp
   PlayerMouseInput.cpp
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(7,1): error C2504: 'Component': base class undefined
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(29,33): error C2061: syntax error: identifier 'GameObject'
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(37,10): error C3668: 'Transform2D::Start': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(38,10): error C3668: 'Transform2D::Update': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(39,10): error C3668: 'Transform2D::Awake': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(8,1): error C2504: 'Component': base class undefined
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(9,10): error C3668: 'Render2D::Start': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(10,10): error C3668: 'Render2D::Update': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(11,10): error C3668: 'Render2D::Awake': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\PlayerMouseInput.cpp(5,16): error C2440: 'static_cast': cannot convert from 'Component *' to 'Transform2D *'
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\PlayerMouseInput.cpp(5,16): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
   Render2D.cpp
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(7,1): error C2504: 'Component': base class undefined
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(29,33): error C2061: syntax error: identifier 'GameObject'
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(37,10): error C3668: 'Transform2D::Start': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(38,10): error C3668: 'Transform2D::Update': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Transform2D.h(39,10): error C3668: 'Transform2D::Awake': method with override specifier 'override' did not override any base class methods
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.cpp(24,110): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.cpp(24,90): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.cpp(24,71): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.cpp(24,52): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
   Transform2D.cpp
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(8,1): error C2504: 'Component': base class undefined
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(9,10): error C3668: 'Render2D::Start': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(10,10): error C3668: 'Render2D::Update': method with override specifier 'override' did not override any base class methods
-C:\Users\Computing\Documents\GitHub\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.h(11,10): error C3668: 'Render2D::Awake': method with override specifier 'override' did not override any base class methods
   Generating Code...
+  Assignment Solution.vcxproj -> C:\Projects\Games-Programming-Assignment\Assignment Solution\x64\Debug\Assignment Solution.exe

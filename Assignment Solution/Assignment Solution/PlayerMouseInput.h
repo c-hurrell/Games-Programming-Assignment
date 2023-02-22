@@ -1,5 +1,5 @@
 #pragma once
-#include "Component.h"
+#include "Object.h"
 #include "Transform2D.h"
 
 class PlayerMouseInput :

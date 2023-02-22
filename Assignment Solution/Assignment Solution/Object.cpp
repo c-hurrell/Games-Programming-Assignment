@@ -4,12 +4,12 @@
 GameObject::GameObject(string objectTag)
 {
 	tag = objectTag;
-	//Transform2D* transform2D = new Transform2D();
-	//transform2D->gameObject = this;
-	//Render2D* render2D = new  Render2D();
-	//render2D->gameObject = this;
-	//AddComponent(transform2D);
-	//AddComponent(render2D);
+	Transform2D* transform2D = new Transform2D();
+	transform2D->gameObject = this;
+	Render2D* render2D = new  Render2D();
+	render2D->gameObject = this;
+	AddComponent(transform2D);
+	AddComponent(render2D);
 }
 GameObject::~GameObject()
 {
@@ -22,7 +22,7 @@ GameObject::~GameObject()
 
 void GameObject::AddComponent(Component* component)
 {
-	Debug::Log("Component Added " + component->tag);
+	Debug::Log("Component Added " + component->tag + " to GameObject " + tag);
 	components.push_back(component);
 	component->Start();
 }
@@ -40,6 +40,15 @@ Component* GameObject::GetComponent(string tag)
 	}
 	return nullptr;
 }
+void GameObject::EnableObject()
+{
+	IsEnabled = true;
+	Awake();
+}
+void GameObject::DisableObject()
+{
+	IsEnabled = false;
+}
 void GameObject::Start()
 {
 	for (Component* c : components)
@@ -56,7 +65,30 @@ void GameObject::Update()
 		}
 	}
 }
-void GameObject::Render()
+void GameObject::Awake()
 {
-
+	for (Component* c : components)
+	{
+		c->Awake();
+	}
+}
+void GameObject::Render(SDL_Renderer* renderer)
+{
+	Render2D* r2D = nullptr;
+	if (components[1]->tag == "Render2D") {
+		r2D = static_cast<Render2D*>(components[1]);
+	}
+	else {
+		for (Component* c : components) {
+			if (c->tag == "Render2D") {
+				r2D = static_cast<Render2D*>(c);
+			}
+		}
+	}
+	if (r2D == nullptr) {
+		Debug::Error("Render2D Component not found for object " + tag);
+	}
+	else {
+		r2D->RenderShape(renderer);
+	}
 }

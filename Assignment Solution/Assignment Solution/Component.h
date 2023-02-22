@@ -7,7 +7,6 @@
 
 #include "SDL.h"
 #include "Debug.h"
-#include "Object.h"
 
 using namespace std;
 
@@ -18,14 +17,14 @@ class Component
 public:
 
 	// Object the component belongs too
-	GameObject* gameObject = nullptr;
+	GameObject* gameObject;
 
 	// Constructor and Deconstructor
 	Component();
-	~Component() = default;
+	virtual ~Component() = default;
 
 	// Component Tag for Identification
-	string tag = "default";
+	string tag;
 
 	// Game Loop Functions
 	#pragma region Game_Loop_Functions

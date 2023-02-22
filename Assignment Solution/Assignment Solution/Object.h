@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+
+// Components
 #include "Component.h"
 #include "Transform2D.h"
 #include "Render2D.h"
@@ -21,7 +23,7 @@ public:
 	void Start();
 	void Update();
 	void Awake();
-	void Render();
+	void Render(SDL_Renderer* renderer);
 
 	// Object Information
 	string tag = "default";
@@ -32,6 +34,9 @@ public:
 	vector<Component*> components;
 	void AddComponent(Component *component);
 	Component* GetComponent(string tag);
+
+	void EnableObject();
+	void DisableObject();
 
 	//void DestroySelf();
 	

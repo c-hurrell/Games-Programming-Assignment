@@ -7,8 +7,11 @@
 
 #include "Debug.h"
 #include "ShapeRendering.h"
-#include "Component.h"
+// GameObject
 #include "Object.h"
+
+// Components
+#include "Component.h"
 #include "Transform2D.h"
 #include "PlayerMouseInput.h"
 
@@ -28,12 +31,12 @@ public:
 	SDL_Renderer* renderer;
 
 	vector<GameObject*> gameObjects;
-	void AddGameObject(GameObject* gameObject);
+	void AddGameObject(GameObject gameObject);
 
 	// GameObject Functions
 	void FindObjectWithTag(string tag);
 	void DestroyObjectsWithTag(string tag);
-	void DestroyObject(GameObject object);
+	void DestroyObject(GameObject* object);
 };
 #endif
 

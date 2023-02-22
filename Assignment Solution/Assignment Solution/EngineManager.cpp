@@ -5,7 +5,7 @@ int input_call = 1;
 bool debugToggle = false;
 bool clearObjects = false;
 
-EngineManager::EngineManager(const char* name = "AliEngine", int posX = 100, int posY = 100, int width = 800, int height = 600)
+EngineManager::EngineManager(const char* name, int posX, int posY, int width, int height)
 {
     EngineManager::window;
     EngineManager::renderer;
@@ -23,6 +23,8 @@ EngineManager::EngineManager(const char* name = "AliEngine", int posX = 100, int
 void EngineManager::Init()
 {
     GameObject* test = new GameObject("Test");
+    auto testTransform = static_cast<Transform2D*>(test->components[0]);
+    gameObjects.push_back(test);
 }
 void EngineManager::Input()
 {
@@ -49,6 +51,7 @@ void EngineManager::Input()
                 delete g;
             }
             gameObjects.clear();
+            Debug::Warning("GameObjects Cleared!");
             GameObject* test = new GameObject("Test");
         }
         else if (!clearObjects) {
@@ -69,7 +72,15 @@ void EngineManager::Update()
 }
 void EngineManager::Render()
 {
-    Debug::Error("Render Function not implemented!");
+    //merge of render and update, as example.
+    SDL_SetRenderDrawColor(renderer, 0, 0, 20, SDL_ALPHA_OPAQUE);
+    //clear the screen
+    SDL_RenderClear(renderer);
+    for (GameObject *object : gameObjects)
+    {
+        object->Render(renderer);
+    }
+    SDL_RenderPresent(renderer);
 }
 void EngineManager::Exit()
 {
