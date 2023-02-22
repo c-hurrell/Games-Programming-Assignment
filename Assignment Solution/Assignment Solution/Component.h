@@ -5,8 +5,8 @@
 #include <iostream>
 #include <string>
 
+#include "SDL.h"
 #include "Debug.h"
-#include "Object.h"
 
 using namespace std;
 
@@ -17,14 +17,14 @@ class Component
 public:
 
 	// Object the component belongs too
-	GameObject* Object;
+	GameObject* gameObject;
 
 	// Constructor and Deconstructor
-	Component() = default;
-	~Component() = default;
+	Component();
+	virtual ~Component() = default;
 
 	// Component Tag for Identification
-	string tag = "default";
+	string tag;
 
 	// Game Loop Functions
 	#pragma region Game_Loop_Functions

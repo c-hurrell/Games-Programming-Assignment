@@ -1,11 +1,19 @@
-#pragma once
+#ifndef TRANSFORM
+#define TRANSFORM
+
 #include "Component.h"
+
+
 class Transform2D :
     public Component
 {
 public:
-    Transform2D();
-    ~Transform2D() = default;
+    Transform2D(double positionX = 0, double positionY = 0);
+    ~Transform2D() override;
+
+    double width = 100;
+    double height = 100;
+
     double scaleX = 1;
     double scaleY = 1;
 
@@ -24,7 +32,7 @@ public:
     // Rotational Functions
     #pragma region Rotation_Functions
     // Will rotate an object to face another given object
-    void RotateSelfToFaceObject(GameObject object);
+    void RotateSelfToFaceObject(GameObject* object);
     // Rotates Object by given angle
     void RotateSelf(double angle);
     // Sets Object to a given angle
@@ -37,4 +45,5 @@ public:
     void Awake() override;
     #pragma endregion
 };
+#endif
 

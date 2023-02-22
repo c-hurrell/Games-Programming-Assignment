@@ -7,15 +7,19 @@
 
 #include "Debug.h"
 #include "ShapeRendering.h"
-#include "Component.h"
+// GameObject
 #include "Object.h"
+
+// Components
+#include "Component.h"
 #include "Transform2D.h"
+#include "PlayerMouseInput.h"
 
 #define DELAY 5000
 class EngineManager
 {
 public:
-	EngineManager();
+	EngineManager(const char* name = "AliEngine", int posX = 100, int posY = 100, int width = 800, int height = 600);
 	void Init();
 	void Input();
 	void Update();
@@ -26,9 +30,13 @@ public:
 	SDL_Window* window;
 	SDL_Renderer* renderer;
 
+	vector<GameObject*> gameObjects;
+	void AddGameObject(GameObject gameObject);
+
 	// GameObject Functions
+	void FindObjectWithTag(string tag);
 	void DestroyObjectsWithTag(string tag);
-	void DestroyObject(GameObject object);
+	void DestroyObject(GameObject* object);
 };
 #endif
 
