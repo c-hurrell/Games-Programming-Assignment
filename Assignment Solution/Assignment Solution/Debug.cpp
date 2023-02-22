@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "Debug.h"
-using namespace std;
+
 
 // DEBUG KEY :
 // <::> Represents an outputed message 
@@ -10,12 +10,20 @@ using namespace std;
 
 // COLOUR KEY:
 // 6 = Dull Yellow (used for time)
+#define DULL_YELLOW 6
 // 10 = Green
+#define GREEN 10
 // 11 = Cyan (Used for outputted numerical values)
+#define CYAN 11
 // 12 = Red (Used exclusively for Errors)
+#define RED 12
 // 13 = Magenta
+#define MAGENTA 13
 // 14 = Yellow (Used for warnings and prompts)
+#define YELLOW 14
 // 15 = White (Is default for SetColour function)
+#define WHITE 15
+using namespace std;
 
 namespace Debug {
 
@@ -27,8 +35,8 @@ namespace Debug {
 		if (active != false)
 		{
 			// Colour; Text to be outputted in that colour;
-			SetColour(6); cout << "[" << GetTime() << "]"; // Time is always in yellow
-			SetColour(13); cout << " <::> " << message << endl; // Set to Magenta
+			SetColour(DULL_YELLOW); cout << "[" << GetTime() << "]"; // Time is always in yellow
+			SetColour(MAGENTA); cout << " <::> " << message << endl; // Set to Magenta
 			SetColour();
 		}
 	}
@@ -37,9 +45,9 @@ namespace Debug {
 	{
 		if (active != false)
 		{
-			SetColour(6); cout << "[" << GetTime() << "]";
-			SetColour(13); cout << " <==> " << message << " : ";
-			SetColour(11);  cout << value << endl;
+			SetColour(DULL_YELLOW); cout << "[" << GetTime() << "]";
+			SetColour(MAGENTA); cout << " <==> " << message << " : ";
+			SetColour(CYAN);  cout << value << endl;
 			SetColour();
 		}
 	}
@@ -53,8 +61,8 @@ namespace Debug {
 	{
 		if (active != false)
 		{
-			SetColour(6); cout << "[" << GetTime() << "]";
-			SetColour(12); cout << " <!!> " << message << endl; // Set to a brightish red
+			SetColour(DULL_YELLOW); cout << "[" << GetTime() << "]";
+			SetColour(RED); cout << " <!!> " << message << endl; // Set to a brightish red
 			SetColour();
 		}
 	}
@@ -63,8 +71,8 @@ namespace Debug {
 	{
 		if (active != false)
 		{
-			SetColour(6); cout << "[" << GetTime() << "]";
-			SetColour(14); cout << " <!!> " << message << endl;
+			SetColour(DULL_YELLOW); cout << "[" << GetTime() << "]";
+			SetColour(YELLOW); cout << " <!!> " << message << endl;
 			SetColour();
 		}
 	}
@@ -72,14 +80,14 @@ namespace Debug {
 	void Debug::SetDebugActive(bool activate)
 	{
 		active = activate;
-		SetColour(6); cout << "[" << GetTime() << "]";
-		SetColour(14); cout << " <??> " << "Debug Log: ";
+		SetColour(DULL_YELLOW); cout << "[" << GetTime() << "]";
+		SetColour(YELLOW); cout << " <??> " << "Debug Log: ";
 
 		if (active == true) {
-			SetColour(10); cout << "On" << endl; // Set to Green
+			SetColour(GREEN); cout << "On" << endl; // Set to Green
 		}
 		else {
-			SetColour(12);  cout << "Off" << endl;
+			SetColour(RED);  cout << "Off" << endl;
 		}
 		SetColour();
 	}

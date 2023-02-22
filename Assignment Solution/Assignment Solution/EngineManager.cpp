@@ -3,8 +3,9 @@
 using namespace std;
 int input_call = 1;
 bool debugToggle = false;
+bool clearObjects = false;
 
-EngineManager::EngineManager()
+EngineManager::EngineManager(const char* name = "AliEngine", int posX = 100, int posY = 100, int width = 800, int height = 600)
 {
     EngineManager::window;
     EngineManager::renderer;
@@ -12,7 +13,7 @@ EngineManager::EngineManager()
         Debug::Error("Something went wrong...");
     }
 
-    window = SDL_CreateWindow("AliEngine", 100, 100, 800, 600, SDL_WINDOW_RESIZABLE);
+    window = SDL_CreateWindow(name, posX, posY, width, height, SDL_WINDOW_RESIZABLE);
     Debug::Log("AliEngine window launched");
 
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
@@ -21,19 +22,12 @@ EngineManager::EngineManager()
 
 void EngineManager::Init()
 {
-    GameObject* test = new GameObject();
-    Transform2D* testTransform = new Transform2D();
-    testTransform->Object = test;
-    test->AddComponent(testTransform);
-    test->GetComponent("Transform2D");
+    GameObject* test = new GameObject("Test");
 }
 void EngineManager::Input()
 {
-    
+    // Checks if Debug has been toggled
     Debug::Error("Input Function not implemented");
-    // ITS ALIVE
-    // 0x51 = Q
-    // Change to SDL_KEYBOARD method
     if (GetKeyState(0x51) < 0) {
         if (!Debug::active && !debugToggle) {
             Debug::SetDebugActive();
@@ -48,10 +42,30 @@ void EngineManager::Input()
     else {
         debugToggle = false;
     }
+    if (GetKeyState(0x10) < 0) {
+        if (!gameObjects.empty() && !clearObjects) {
+            for (GameObject* g : gameObjects)
+            {
+                delete g;
+            }
+            gameObjects.clear();
+            GameObject* test = new GameObject("Test");
+        }
+        else if (!clearObjects) {
+            Debug::Error("No GameObject(s) have been initialised!");
+        }
+        clearObjects = true;
+    }
+    else {
+        clearObjects = false;
+    }
 }
 void EngineManager::Update()
 {
-    Debug::Error("Update Function not implemented");
+    for (GameObject *object : gameObjects)
+    {
+        object->Update();
+    }
 }
 void EngineManager::Render()
 {

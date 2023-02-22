@@ -134,6 +134,8 @@
     <ClCompile Include="Debug.cpp" />
     <ClCompile Include="EngineManager.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="PlayerMouseInput.cpp" />
+    <ClCompile Include="Render2D.cpp" />
     <ClCompile Include="ShapeRendering.cpp" />
     <ClCompile Include="SZ_Timer.cpp" />
     <ClCompile Include="Transform2D.cpp" />
@@ -145,6 +147,8 @@
     <ClInclude Include="Debug.h" />
     <ClInclude Include="EngineManager.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="PlayerMouseInput.h" />
+    <ClInclude Include="Render2D.h" />
     <ClInclude Include="ShapeRendering.h" />
     <ClInclude Include="SZ_Timer.h" />
     <ClInclude Include="Transform2D.h" />

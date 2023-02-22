@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string>
 
+#include "SDL.h"
 #include "Debug.h"
 #include "Object.h"
 
@@ -17,10 +18,10 @@ class Component
 public:
 
 	// Object the component belongs too
-	GameObject* Object;
+	GameObject* gameObject = nullptr;
 
 	// Constructor and Deconstructor
-	Component() = default;
+	Component();
 	~Component() = default;
 
 	// Component Tag for Identification
