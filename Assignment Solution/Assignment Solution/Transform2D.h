@@ -1,4 +1,6 @@
-#pragma once
+#ifndef TRANSFORM
+#define TRANSFORM
+
 #include "Component.h"
 class Transform2D :
     public Component
@@ -37,4 +39,5 @@ public:
     void Awake() override;
     #pragma endregion
 };
+#endif
 

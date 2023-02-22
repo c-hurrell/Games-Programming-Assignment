@@ -1,4 +1,5 @@
-#pragma once
+#ifndef RENDER2D
+#define RENDER2D
 #include "Component.h"
 #include "Transform2D.h"
 
@@ -9,4 +10,5 @@ class Render2D :
     void Update() override;
     void Awake() override;
 };
+#endif
 
