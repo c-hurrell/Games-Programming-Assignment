@@ -133,6 +133,7 @@
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Debug.cpp" />
     <ClCompile Include="EngineManager.cpp" />
+    <ClCompile Include="MoveShapeTest.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="PlayerMouseInput.cpp" />
     <ClCompile Include="Render2D.cpp" />
@@ -146,6 +147,7 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="Debug.h" />
     <ClInclude Include="EngineManager.h" />
+    <ClInclude Include="MoveShapeTest.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="PlayerMouseInput.h" />
     <ClInclude Include="Render2D.h" />

@@ -10,3 +10,7 @@ void PlayerMouseInput::Update()
 	transform2D->posX = x;
 	transform2D->posY = y;
 }
+
+void PlayerMouseInput::Awake()
+{
+}

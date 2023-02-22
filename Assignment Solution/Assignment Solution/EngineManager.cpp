@@ -9,6 +9,7 @@ EngineManager::EngineManager(const char* name, int posX, int posY, int width, in
 {
     EngineManager::window;
     EngineManager::renderer;
+
     if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
         Debug::Error("Something went wrong...");
     }
@@ -22,14 +23,11 @@ EngineManager::EngineManager(const char* name, int posX, int posY, int width, in
 
 void EngineManager::Init()
 {
-    GameObject* test = new GameObject("Test");
-    auto testTransform = static_cast<Transform2D*>(test->components[0]);
-    gameObjects.push_back(test);
+    CreateGameObject("Test");
 }
 void EngineManager::Input()
 {
     // Checks if Debug has been toggled
-    Debug::Error("Input Function not implemented");
     if (GetKeyState(0x51) < 0) {
         if (!Debug::active && !debugToggle) {
             Debug::SetDebugActive();
@@ -89,4 +87,14 @@ void EngineManager::Exit()
     SDL_DestroyWindow(window);
 
     SDL_Quit();
+}
+
+void EngineManager::CreateGameObject(string gmObjTag)
+{
+    GameObject* gameObject = new GameObject(gmObjTag);
+    // Add Components
+    gameObject->AddComponent(new Render2D());
+    gameObject->AddComponent(new PlayerMouseInput());
+    gameObjects.push_back(gameObject);
+    
 }

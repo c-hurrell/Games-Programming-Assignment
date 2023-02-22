@@ -11,9 +11,7 @@
 #include "Object.h"
 
 // Components
-#include "Component.h"
-#include "Transform2D.h"
-#include "PlayerMouseInput.h"
+
 
 #define DELAY 5000
 class EngineManager
@@ -37,6 +35,8 @@ public:
 	void FindObjectWithTag(string tag);
 	void DestroyObjectsWithTag(string tag);
 	void DestroyObject(GameObject* object);
+
+	void CreateGameObject(string gmObjTag = "default");
 };
 #endif
 

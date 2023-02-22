@@ -54,6 +54,9 @@
     <ClCompile Include="Render2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MoveShapeTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Debug.h">
@@ -88,6 +91,9 @@
     </ClInclude>
     <ClInclude Include="Render2D.h">
       <Filter>Header Files\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="MoveShapeTest.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

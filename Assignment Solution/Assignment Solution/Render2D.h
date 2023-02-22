@@ -23,6 +23,7 @@ public:
         Circle,
         Triangle
     };
+    Shape shape;
     void RenderShape(SDL_Renderer* renderer);
 };
 #endif

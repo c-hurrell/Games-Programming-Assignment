@@ -3,6 +3,6 @@
 
 namespace ShapeRendering
 {
-	SDL_Rect Rectangle(int x, int y, int w, int h);
+	SDL_Rect Rectangle(double x, double y, double w, double h);
 };
 

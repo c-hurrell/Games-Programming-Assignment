@@ -1,13 +1,2 @@
-﻿  AliEngine.cpp
-  Assignment Solution.cpp
-  EngineManager.cpp
-  Object.cpp
-  PlayerMouseInput.cpp
-  Render2D.cpp
-C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.cpp(24,110): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.cpp(24,90): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.cpp(24,71): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.cpp(24,52): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-  Transform2D.cpp
-  Generating Code...
+﻿  Render2D.cpp
   Assignment Solution.vcxproj -> C:\Projects\Games-Programming-Assignment\Assignment Solution\x64\Debug\Assignment Solution.exe
