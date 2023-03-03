@@ -18,15 +18,25 @@ class EngineManager
 {
 public:
 	EngineManager(const char* name = "AliEngine", int posX = 100, int posY = 100, int width = 800, int height = 600);
-	void Init();
+	~EngineManager();
+
+	// Initialise Code
+	void Init(bool* val);
+
+	// Gameloop functinosn
 	void Input();
 	void Update();
 	void Render();
+
+	// Exits the game
 	void Exit();
-	//bool IsRunning();
-	//bool Running();
+
+
 	SDL_Window* window;
 	SDL_Renderer* renderer;
+
+
+	bool* done = nullptr;
 
 	vector<GameObject*> gameObjects;
 	void AddGameObject(GameObject gameObject);

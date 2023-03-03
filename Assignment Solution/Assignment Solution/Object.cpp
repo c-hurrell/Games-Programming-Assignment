@@ -54,9 +54,6 @@ void GameObject::Start()
 	{
 		c->Start();
 	}
-	
-
-
 }
 void GameObject::Update()
 {
@@ -76,15 +73,13 @@ void GameObject::Awake()
 }
 void GameObject::Render(SDL_Renderer* renderer)
 {
-	Render2D* r2D = nullptr;
+	//Render2D* r2D = nullptr;
 	if (components[1]->tag == "Render2D") {
-		//Debug::Log("Found r2D");
 		r2D = static_cast<Render2D*>(components[1]);
 	}
 	else {
 		for (Component* c : components) {
 			if (c->tag == "Render2D") {
-				//Debug::Log("Found r2D");
 				r2D = static_cast<Render2D*>(c);
 			}
 		}

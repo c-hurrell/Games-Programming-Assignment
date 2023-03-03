@@ -20,10 +20,20 @@ EngineManager::EngineManager(const char* name, int posX, int posY, int width, in
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     Debug::Log("Renderer active");
 }
-
-void EngineManager::Init()
+EngineManager::~EngineManager()
 {
+    for (GameObject* gameObject : gameObjects)
+    {
+        delete gameObject;
+    }
+    gameObjects.clear();
+}
+
+void EngineManager::Init(bool* val)
+{
+    done = val;
     CreateGameObject("Test");
+    
 }
 void EngineManager::Input()
 {
@@ -60,6 +70,16 @@ void EngineManager::Input()
     else {
         clearObjects = false;
     }
+
+    SDL_Event _event;
+    while (SDL_PollEvent(&_event) != 0)
+    {
+        if (_event.type == SDL_QUIT) {
+            Debug::Log("Exit Game...");
+            *done = true;
+            // Ctrl + C in Console
+        } // end of handling event.
+    }
 }
 void EngineManager::Update()
 {
@@ -82,10 +102,7 @@ void EngineManager::Render()
 }
 void EngineManager::Exit()
 {
-    //SDL_Delay(DELAY);
-
     SDL_DestroyWindow(window);
-
     SDL_Quit();
 }
 

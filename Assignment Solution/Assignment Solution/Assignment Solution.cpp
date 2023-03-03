@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
     
     Debug::SetDebugActive();
 
-    Engine.Init();
+    Engine.Init(&done);
 
     SDL_Rect r = ShapeRendering::Rectangle(0, 0, 50, 50);
 
@@ -35,8 +35,6 @@ int main(int argc, char *argv[])
         Engine.Input();
         Engine.Update();
         Engine.Render();
-        
-        //r.x++;
 
         if (aTimer.getTicks() < DELTA_TIME)
         {
@@ -48,17 +46,6 @@ int main(int argc, char *argv[])
             }
             
         }
-
-        SDL_Event event;
-
-        while (SDL_PollEvent(&event) != 0) {
-            if (event.type == SDL_QUIT) {
-                Debug::Log("Exit Game...");
-                done = true;
-                // Ctrl + C in Console
-            }
-        } // end of handling event.
-
     }
     Engine.Exit();
 

@@ -1,8 +1,8 @@
 #ifndef RENDER2D
 #define RENDER2D
 
-#include "SDL.h"
-#include "Object.h"
+#include "SDL.h" 
+#include "Component.h"
 // ShapeRendering
 #include "ShapeRendering.h"
 
