@@ -5,7 +5,8 @@
 #include <iostream>
 #include <string>
 
-#include "SDL.h"
+//#include "Object.h"
+//#include "SDL.h"
 #include "Debug.h"
 
 using namespace std;
@@ -20,7 +21,7 @@ public:
 	GameObject* gameObject;
 
 	// Constructor and Deconstructor
-	Component();
+	Component(GameObject* gO);
 	virtual ~Component() = default;
 
 	// Component Tag for Identification

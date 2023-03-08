@@ -4,7 +4,6 @@ Render2D::Render2D() : Component()
 {
 	tag = "Render2D";
 	shape = Rectangle;
-	
 }
 
 void Render2D::Start()

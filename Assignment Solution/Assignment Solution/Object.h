@@ -5,12 +5,13 @@
 #include <string>
 #include <vector>
 
+#include "Debug.h"
+#include "SDL.h"
 // Components
-#include "Component.h"
+//#include "Component.h"
 #include "Transform2D.h"
 #include "Render2D.h"
 #include "PlayerMouseInput.h"
-#include "MoveShapeTest.h"
 
 using namespace std;
 
@@ -34,10 +35,12 @@ public:
 
 	// Object - Component Relationsip
 	vector<Component*> components;
-	void AddComponent(Component *component);
+	template <typename C> 
+	C* AddComponent();
+	//void AddComponent(Component *component);
 	Component* GetComponent(string tag);
-	Transform2D* transform2D = nullptr;
-	// Render2D* r2D = nullptr;
+	Transform2D* transform2D;
+	Render2D* r2D;
 
 	void EnableObject();
 	void DisableObject();
@@ -45,6 +48,23 @@ public:
 	//void DestroySelf();
 	
 };
+
+template <typename C> inline C* GameObject::AddComponent()
+{
+	C* c = new C(this*);
+	Component* component = dynamic_cast<Component*>(c);
+	if (component == nullptr) {
+		Debug::Error("Invalid component added!");
+		delete(component);
+		delete(c);
+		return nullptr;
+	}
+	Debug::Log("Component Added " + component->tag + " to GameObject " + tag);
+	component->gameObject = this;
+	components.push_back(component);
+	component->Start();
+	return c;
+}
 
 #endif
 

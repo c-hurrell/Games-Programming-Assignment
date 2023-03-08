@@ -1,7 +1,7 @@
 #include "Component.h"
 
-Component::Component()
+Component::Component(GameObject* gO)
 {
-	gameObject = nullptr;
+	gameObject = gO;
 	tag = "default";
 }

@@ -20,7 +20,7 @@ EngineManager::EngineManager(const char* name, int posX, int posY, int width, in
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     Debug::Log("Renderer active");
 }
-
+// Intialises all the GameObjects
 void EngineManager::Init()
 {
     CreateGameObject("Test");
@@ -93,8 +93,8 @@ void EngineManager::CreateGameObject(string gmObjTag)
 {
     GameObject* gameObject = new GameObject(gmObjTag);
     // Add Components
-    gameObject->AddComponent(new Render2D());
-    gameObject->AddComponent(new PlayerMouseInput());
+    //gameObject->AddComponent<Render2D>();
+    //gameObject->AddComponent<Transform2D>();
     gameObjects.push_back(gameObject);
     
 }

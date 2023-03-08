@@ -11,6 +11,7 @@
 #include "Object.h"
 
 // Components
+#include "Component.h"
 
 
 #define DELAY 5000
