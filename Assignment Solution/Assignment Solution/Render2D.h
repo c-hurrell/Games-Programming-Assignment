@@ -3,6 +3,7 @@
 
 #include "SDL.h"
 #include "Object.h"
+#include "Transform2D.h"
 // ShapeRendering
 #include "ShapeRendering.h"
 

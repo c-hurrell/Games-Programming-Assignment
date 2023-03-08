@@ -10,11 +10,11 @@
 #include "Transform2D.h"
 #include "Render2D.h"
 #include "PlayerMouseInput.h"
-#include "MoveShapeTest.h"
 
 using namespace std;
 
 class Component;
+class Render2D;
 
 class GameObject
 {
@@ -37,7 +37,7 @@ public:
 	void AddComponent(Component *component);
 	Component* GetComponent(string tag);
 	Transform2D* transform2D = nullptr;
-	// Render2D* r2D = nullptr;
+	Render2D* r2D = nullptr;
 
 	void EnableObject();
 	void DisableObject();

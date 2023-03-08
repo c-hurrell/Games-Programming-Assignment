@@ -5,7 +5,9 @@ GameObject::GameObject(string objectTag)
 {
 	tag = objectTag;
 	transform2D = new Transform2D();
+	r2D = new Render2D();
 	AddComponent(transform2D);
+	AddComponent(r2D);
 	
 }
 GameObject::~GameObject()
@@ -76,12 +78,12 @@ void GameObject::Awake()
 }
 void GameObject::Render(SDL_Renderer* renderer)
 {
-	Render2D* r2D = nullptr;
-	if (components[1]->tag == "Render2D") {
+	//Render2D* r2D = nullptr;
+	if (components[1]->tag == "Render2D" && r2D == nullptr) {
 		//Debug::Log("Found r2D");
 		r2D = static_cast<Render2D*>(components[1]);
 	}
-	else {
+	else if (r2D == nullptr) {
 		for (Component* c : components) {
 			if (c->tag == "Render2D") {
 				//Debug::Log("Found r2D");
