@@ -4,10 +4,8 @@
 GameObject::GameObject(string objectTag)
 {
 	tag = objectTag;
-	transform2D = new Transform2D();
-	r2D = new Render2D();
-	AddComponent(transform2D);
-	AddComponent(r2D);
+	transform2D = AddComponent<Transform2D>();
+	r2D = AddComponent<Render2D>();
 	
 }
 GameObject::~GameObject()
@@ -17,6 +15,9 @@ GameObject::~GameObject()
 		delete c;
 	}
 	components.clear();
+	// Deletes default components from object as well
+	delete transform2D;
+	delete r2D;
 }
 
 void GameObject::AddComponent(Component* component)
@@ -43,11 +44,12 @@ Component* GameObject::GetComponent(string tag)
 void GameObject::EnableObject()
 {
 	IsEnabled = true;
-	Awake();
+	OnEnable();
 }
 void GameObject::DisableObject()
 {
 	IsEnabled = false;
+	OnDisable();
 }
 
 void GameObject::Start()
@@ -56,43 +58,38 @@ void GameObject::Start()
 	{
 		c->Start();
 	}
-	
-
-
 }
 void GameObject::Update()
 {
 	for (Component* c : components)
 	{
-		if (c->tag != "Render2D") {
+		if (c->tag != "Render2D" && c->IsActive == true) {
 			c->Update();
 		}
 	}
 }
-void GameObject::Awake()
+void GameObject::OnEnable()
 {
 	for (Component* c : components)
 	{
-		c->Awake();
+		c->OnEnable();
+	}
+}
+void GameObject::OnDisable()
+{
+	for (Component* c : components)
+	{
+		c->OnDisable();
 	}
 }
 void GameObject::Render(SDL_Renderer* renderer)
 {
-	//Render2D* r2D = nullptr;
-	if (components[1]->tag == "Render2D" && r2D == nullptr) {
-		//Debug::Log("Found r2D");
-		r2D = static_cast<Render2D*>(components[1]);
-	}
-	else if (r2D == nullptr) {
-		for (Component* c : components) {
-			if (c->tag == "Render2D") {
-				//Debug::Log("Found r2D");
-				r2D = static_cast<Render2D*>(c);
-			}
-		}
-	}
-	if (r2D == nullptr) {
+	if (r2D == nullptr && IsEnabled) {
 		Debug::Error("Render2D Component missing for object " + tag);
+	}
+	// Added a nullptr check in case
+	else if (r2D != nullptr && r2D->IsActive != true) {
+		// Impliment function to not render object
 	}
 	else {
 		r2D->RenderShape(renderer);

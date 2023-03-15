@@ -1,5 +1,5 @@
-﻿  Object.cpp
-  PlayerMouseInput.cpp
-  Render2D.cpp
-  Generating Code...
+﻿  Assignment Solution.cpp
+C:\Users\charl\OneDrive\Documents\Games Programming\Assignment\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Assignment Solution.cpp(14,31): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\charl\OneDrive\Documents\Games Programming\Assignment\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Assignment Solution.cpp(50,26): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\charl\OneDrive\Documents\Games Programming\Assignment\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Assignment Solution.cpp(55,23): warning C4244: 'argument': conversion from 'float' to 'Uint32', possible loss of data
   Assignment Solution.vcxproj -> C:\Users\charl\OneDrive\Documents\Games Programming\Assignment\Games-Programming-Assignment\Assignment Solution\x64\Debug\Assignment Solution.exe

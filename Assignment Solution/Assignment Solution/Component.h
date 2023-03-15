@@ -25,6 +25,7 @@ public:
 
 	// Component Tag for Identification
 	string tag;
+	bool IsActive = true;
 
 	// Game Loop Functions
 	#pragma region Game_Loop_Functions
@@ -32,8 +33,10 @@ public:
 	virtual void Start() = 0;
 	// Will run each frame the game runs
 	virtual void Update() = 0;
-	// Will run each time the object is enabled after being disabled
-	virtual void Awake() = 0;
+	// Will run each time the object is enabled
+	virtual void OnEnable() = 0;
+	// Will run each time the object is disabled
+	virtual void OnDisable() = 0;
 	#pragma endregion
 	
 };

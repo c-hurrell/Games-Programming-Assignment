@@ -19,9 +19,13 @@ void Transform2D::Update()
 {
 	// Not Used
 }
-void Transform2D::Awake()
+void Transform2D::OnEnable()
 {
 	// Not Used
+}
+void Transform2D::OnDisable()
+{
+
 }
 #pragma endregion
 

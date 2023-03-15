@@ -93,8 +93,7 @@ void EngineManager::CreateGameObject(string gmObjTag)
 {
     GameObject* gameObject = new GameObject(gmObjTag);
     // Add Components
-    gameObject->AddComponent(new Render2D());
-    gameObject->AddComponent(new PlayerMouseInput());
+    gameObject->AddComponent<PlayerMouseInput>();
     gameObjects.push_back(gameObject);
     
 }

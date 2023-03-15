@@ -17,7 +17,8 @@ public:
 
     void Start() override;
     void Update() override;
-    void Awake() override;
+    void OnEnable() override;
+    void OnDisable() override;
 
     enum Shape {
         Rectangle,

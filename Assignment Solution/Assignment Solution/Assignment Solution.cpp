@@ -9,8 +9,9 @@
 
 
 SZ_Timer aTimer;
-EngineManager Engine("AliEngine");
-const int DELTA_TIME = 50;
+string windowName = "AliEngine || FPS : ";
+EngineManager Engine(windowName.c_str());
+const float DELTA_TIME = 16.67;
 bool done = false;
 
 using namespace std;
@@ -24,6 +25,7 @@ int main(int argc, char *argv[])
     
     Debug::SetDebugActive();
 
+    //Implement Menu here?
     Engine.Init();
 
     SDL_Rect r = ShapeRendering::Rectangle(0, 0, 50, 50);
@@ -40,11 +42,20 @@ int main(int argc, char *argv[])
 
         if (aTimer.getTicks() < DELTA_TIME)
         {
+            
+            
+            
             //Debug::Log("Ticks are", aTimer.getTicks());
-            SDL_Delay(DELTA_TIME - aTimer.getTicks());
+            float fpsDelay = DELTA_TIME - aTimer.getTicks();
+            int fpsCount = (fpsDelay > 0) ? 1000.0f / fpsDelay : 0.0f;
+            string fps = to_string(fpsCount);
+            string FPSCount = windowName + fps;
+            const char* fpsChar = FPSCount.c_str();
+            SDL_SetWindowTitle(Engine.window, fpsChar);
+            SDL_Delay(fpsDelay);
             //Debug::Log("Delay", DELTA_TIME - aTimer.getTicks());
-            if ((DELTA_TIME - aTimer.getTicks()) < -50) {
-                Debug::Warning("Low frame rate");
+            if ((DELTA_TIME - aTimer.getTicks()) < -20) {
+                Debug::Warning("Frame rate below 60");
             }
             
         }

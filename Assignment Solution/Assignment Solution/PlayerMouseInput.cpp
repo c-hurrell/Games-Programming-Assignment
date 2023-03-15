@@ -1,5 +1,8 @@
 #include "PlayerMouseInput.h"
-
+PlayerMouseInput::PlayerMouseInput() : Component()
+{
+	tag = "PlayerMouseInput"; 
+}
 void PlayerMouseInput::Start()
 {
 	transform2D = static_cast<Transform2D*>(gameObject->GetComponent("Transform2D"));
@@ -11,6 +14,9 @@ void PlayerMouseInput::Update()
 	transform2D->posY = y;
 }
 
-void PlayerMouseInput::Awake()
+void PlayerMouseInput::OnEnable()
+{
+}
+void PlayerMouseInput::OnDisable()
 {
 }

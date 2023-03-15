@@ -15,8 +15,10 @@ void Render2D::Start()
 void Render2D::Update()
 {
 }
-
-void Render2D::Awake()
+void Render2D::OnEnable()
+{
+}
+void Render2D::OnDisable()
 {
 }
 

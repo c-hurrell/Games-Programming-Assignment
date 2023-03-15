@@ -42,7 +42,8 @@ public:
     #pragma region Game_Loop_Overrides
     void Start() override;
     void Update() override;
-    void Awake() override;
+    void OnEnable() override;
+    void OnDisable() override;
     #pragma endregion
 };
 #endif

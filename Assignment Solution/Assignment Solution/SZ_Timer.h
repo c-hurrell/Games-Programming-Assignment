@@ -10,6 +10,7 @@
 	private:
 		int startTicks; // SDL time when the timer started
 	public:
+		int FPS = 60;
 		SZ_Timer();
 		//SDL timer stuff
 		void resetTicksTimer(); // resets timer to zero
