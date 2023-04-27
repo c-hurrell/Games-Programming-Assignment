@@ -9,7 +9,7 @@
 
 
 SZ_Timer aTimer;
-string windowName = "Charles T Hurrell(25296839) || AliEngine || FPS : ";
+string windowName = "Charles T Hurrell(25296839) || CPG2015 || AliEngine || FPS : ";
 EngineManager Engine(windowName.c_str());
 const int DELTA_TIME = 16;
 bool done = false;
