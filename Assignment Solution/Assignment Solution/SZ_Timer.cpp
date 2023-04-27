@@ -12,7 +12,6 @@ void SZ_Timer::resetTicksTimer()
 int SZ_Timer::getTicks()
 {
 	//printf("getTicks! %i \n", SDL_GetTicks() - startTicks);
-	float frames = SDL_GetTicks() - startTicks;
-	FPS = (frames > 0) ? 1000.0f / frames : 0.0f;
-	return (frames); //Return the current time minus the start time
+	return SDL_GetTicks() - startTicks;
+	//Return the current time minus the start time
 }

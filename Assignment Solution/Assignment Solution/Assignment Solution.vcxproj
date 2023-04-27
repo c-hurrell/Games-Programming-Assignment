@@ -136,9 +136,11 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="PlayerMouseInput.cpp" />
     <ClCompile Include="Render2D.cpp" />
+    <ClCompile Include="Rigidbody.cpp" />
     <ClCompile Include="ShapeRendering.cpp" />
     <ClCompile Include="SZ_Timer.cpp" />
     <ClCompile Include="Transform2D.cpp" />
+    <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AliEngine.h" />
@@ -149,9 +151,11 @@
     <ClInclude Include="Object.h" />
     <ClInclude Include="PlayerMouseInput.h" />
     <ClInclude Include="Render2D.h" />
+    <ClInclude Include="Rigidbody.h" />
     <ClInclude Include="ShapeRendering.h" />
     <ClInclude Include="SZ_Timer.h" />
     <ClInclude Include="Transform2D.h" />
+    <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

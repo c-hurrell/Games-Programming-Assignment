@@ -23,6 +23,8 @@
 #define YELLOW 14
 // 15 = White (Is default for SetColour function)
 #define WHITE 15
+
+// Common usage in this file space
 using namespace std;
 
 namespace Debug {
@@ -35,7 +37,7 @@ namespace Debug {
 		if (active != false)
 		{
 			// Colour; Text to be outputted in that colour;
-			SetColour(DULL_YELLOW); cout << "[" << GetTime() << "]"; // Time is always in yellow
+			OutputTime(); // Time is always in yellow
 			SetColour(MAGENTA); cout << " <::> " << message << endl; // Set to Magenta
 			SetColour();
 		}
@@ -45,13 +47,21 @@ namespace Debug {
 	{
 		if (active != false)
 		{
-			SetColour(DULL_YELLOW); cout << "[" << GetTime() << "]";
+			OutputTime();
 			SetColour(MAGENTA); cout << " <==> " << message << " : ";
 			SetColour(CYAN);  cout << value << endl;
 			SetColour();
 		}
 	}
-	//void Debug::Log(node Node, string message)
+	//void Debug::Log(GameObject* object, string message)
+	//{
+	//	if (active != false)
+	//	{
+	//		OutputTime();
+	//		SetColour(MAGENTA); cout << " <::> " << object->tag << message << endl;
+	//		SetColour();
+	//	}
+	//}
 
 #pragma endregion
 
@@ -61,7 +71,7 @@ namespace Debug {
 	{
 		if (active != false)
 		{
-			SetColour(DULL_YELLOW); cout << "[" << GetTime() << "]";
+			OutputTime();
 			SetColour(RED); cout << " <!!> " << message << endl; // Set to a brightish red
 			SetColour();
 		}
@@ -71,7 +81,7 @@ namespace Debug {
 	{
 		if (active != false)
 		{
-			SetColour(DULL_YELLOW); cout << "[" << GetTime() << "]";
+			OutputTime();
 			SetColour(YELLOW); cout << " <!!> " << message << endl;
 			SetColour();
 		}
@@ -80,7 +90,7 @@ namespace Debug {
 	void Debug::SetDebugActive(bool activate)
 	{
 		active = activate;
-		SetColour(DULL_YELLOW); cout << "[" << GetTime() << "]";
+		OutputTime();
 		SetColour(YELLOW); cout << " <??> " << "Debug Log: ";
 
 		if (active == true) {
@@ -114,5 +124,10 @@ namespace Debug {
 		outputStream << LogTime;
 
 		return outputStream.str();
+	}
+	// Default is DULL_YELLOW
+	void Debug::OutputTime(int colour)
+	{
+		SetColour(colour); cout << "[" << GetTime() << "]";
 	}
 }

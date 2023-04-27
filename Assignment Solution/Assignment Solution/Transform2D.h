@@ -1,24 +1,25 @@
 #ifndef TRANSFORM
 #define TRANSFORM
 
-#include "Component.h"
+#include "Object.h"
 
+class GameObject;
 
 class Transform2D :
     public Component
 {
 public:
-    Transform2D(double positionX = 0, double positionY = 0);
+    Transform2D(float positionX = 0, float positionY = 0);
     ~Transform2D() override;
 
-    double width = 100;
-    double height = 100;
+    float width = 100;
+    float height = 100;
 
-    double scaleX = 1;
-    double scaleY = 1;
+    float scaleX = 1;
+    float scaleY = 1;
 
-    double posX = 0;
-    double posY = 0;
+    float posX = 0;
+    float posY = 0;
 
     double rotation = 0;
 

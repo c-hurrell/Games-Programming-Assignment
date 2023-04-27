@@ -9,9 +9,9 @@
 
 
 SZ_Timer aTimer;
-string windowName = "AliEngine || FPS : ";
+string windowName = "Charles T Hurrell(25296839) || AliEngine || FPS : ";
 EngineManager Engine(windowName.c_str());
-const float DELTA_TIME = 16.67;
+const int DELTA_TIME = 16;
 bool done = false;
 
 using namespace std;
@@ -42,9 +42,6 @@ int main(int argc, char *argv[])
 
         if (aTimer.getTicks() < DELTA_TIME)
         {
-            
-            
-            
             //Debug::Log("Ticks are", aTimer.getTicks());
             float fpsDelay = DELTA_TIME - aTimer.getTicks();
             int fpsCount = (fpsDelay > 0) ? 1000.0f / fpsDelay : 0.0f;

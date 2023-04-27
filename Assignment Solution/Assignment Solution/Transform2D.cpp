@@ -1,6 +1,6 @@
 #include "Transform2D.h"
 
-Transform2D::Transform2D(double positionX, double positionY) : Component()
+Transform2D::Transform2D(float positionX, float positionY) : Component()
 {
 	tag = "Transform2D";
 	posX = positionX;

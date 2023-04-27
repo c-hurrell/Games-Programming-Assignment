@@ -7,6 +7,9 @@
 // ShapeRendering
 #include "ShapeRendering.h"
 
+class GameObject;
+class Transform2D;
+
 class Render2D :
     public Component
 {

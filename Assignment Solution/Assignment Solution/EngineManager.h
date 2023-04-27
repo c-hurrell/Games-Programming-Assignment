@@ -28,6 +28,7 @@ public:
 	SDL_Window* window;
 	SDL_Renderer* renderer;
 
+	// All the GameObjects
 	vector<GameObject*> gameObjects;
 	void AddGameObject(GameObject gameObject);
 

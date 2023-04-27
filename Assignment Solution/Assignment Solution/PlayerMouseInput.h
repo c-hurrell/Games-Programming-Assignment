@@ -3,6 +3,7 @@
 #include "Transform2D.h"
 
 class GameObject; 
+class Transform2D;
 
 class PlayerMouseInput :
     public Component
