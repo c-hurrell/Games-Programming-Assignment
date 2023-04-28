@@ -3,6 +3,7 @@
 #include "Object.h"
 #include "Transform2D.h"
 #include "Vector2.h"
+#include "SDL.h"
 
 class GameObject;
 class Transform2D;
@@ -14,8 +15,7 @@ class Rigidbody :
 public:
     Transform2D* transform2D = nullptr;
     // Collider Dimensions
-    float width;
-    float height;
+    SDL_Rect collider;
     
     // Collider Checks
     bool collisionCheck;

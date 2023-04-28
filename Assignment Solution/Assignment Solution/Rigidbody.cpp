@@ -2,6 +2,12 @@
 
 Rigidbody::Rigidbody()
 {
+	transform2D = static_cast<Transform2D*>(gameObject->GetComponent("Transform2D"));
+	Rigidbody::collider;
+	collider.x = transform2D->posX;
+	collider.y = transform2D->posY;
+	collider.w = transform2D->width;
+	collider.h = transform2D->height;
 }
 
 Rigidbody::~Rigidbody()
