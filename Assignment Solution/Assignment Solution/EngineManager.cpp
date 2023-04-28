@@ -3,12 +3,18 @@
 using namespace std;
 int input_call = 1;
 bool debugToggle = false;
-bool clearObjects = false;
+bool clearScenes = false;
 
 EngineManager::EngineManager(const char* name, int posX, int posY, int width, int height)
 {
     EngineManager::window;
     EngineManager::renderer;
+
+    EngineManager::current_scene;
+    //Debug::SetDebugActive();
+
+    current_scene = new Scene("Placeholder");
+    Debug::Log("Test Scene initialised");
 
     if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
         Debug::Error("Something went wrong...");
@@ -23,7 +29,7 @@ EngineManager::EngineManager(const char* name, int posX, int posY, int width, in
 
 void EngineManager::Init()
 {
-    CreateGameObject("Test");
+
 }
 void EngineManager::Input()
 {
@@ -43,30 +49,27 @@ void EngineManager::Input()
         debugToggle = false;
     }
     if (GetKeyState(0x10) < 0) {
-        if (!gameObjects.empty() && !clearObjects) {
-            for (GameObject* g : gameObjects)
+        if (!scenes.empty() && !clearScenes) {
+            for (Scene* s : scenes)
             {
-                delete g;
+                delete s;
             }
-            gameObjects.clear();
-            Debug::Warning("GameObjects Cleared!");
-            GameObject* test = new GameObject("Test");
+            scenes.clear();
+            Debug::Warning("Scenes Cleared!");
+            Scene* test = new Scene("Test");
         }
-        else if (!clearObjects) {
-            Debug::Error("No GameObject(s) have been initialised!");
+        else if (!clearScenes) {
+            Debug::Error("No Scene(s) have been initialised!");
         }
-        clearObjects = true;
+        clearScenes = true;
     }
     else {
-        clearObjects = false;
+        clearScenes = false;
     }
 }
 void EngineManager::Update()
 {
-    for (GameObject *object : gameObjects)
-    {
-        object->Update();
-    }
+    current_scene->Update();
 }
 void EngineManager::Render()
 {
@@ -74,10 +77,9 @@ void EngineManager::Render()
     SDL_SetRenderDrawColor(renderer, 0, 0, 20, SDL_ALPHA_OPAQUE);
     //clear the screen
     SDL_RenderClear(renderer);
-    for (GameObject *object : gameObjects)
-    {
-        object->Render(renderer);
-    }
+    
+    current_scene->Render(renderer);
+
     SDL_RenderPresent(renderer);
 }
 void EngineManager::Exit()
@@ -87,13 +89,4 @@ void EngineManager::Exit()
     SDL_DestroyWindow(window);
 
     SDL_Quit();
-}
-
-void EngineManager::CreateGameObject(string gmObjTag)
-{
-    GameObject* gameObject = new GameObject(gmObjTag);
-    // Add Components
-    gameObject->AddComponent<PlayerMouseInput>();
-    gameObjects.push_back(gameObject);
-    
 }

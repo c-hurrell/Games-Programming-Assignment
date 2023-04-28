@@ -42,6 +42,7 @@ public:
     void OnDisable() override;
 
     // Collision Handler
+    void CheckCollision();
     void OnCollision();
     void OnCollisionEnter();
     void OnCollisionExit();

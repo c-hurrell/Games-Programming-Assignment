@@ -6,11 +6,12 @@
 #include <vector>
 
 #include "AliEngine.h"
+#include "Debug.h"
 
 
 SZ_Timer aTimer;
-string windowName = "Charles T Hurrell(25296839) || AliEngine || FPS : ";
-EngineManager Engine(windowName.c_str());
+string windowName = "Charles T Hurrell(25296839) || CPG2015 || AliEngine || FPS : ";
+
 const int DELTA_TIME = 16;
 bool done = false;
 
@@ -24,6 +25,7 @@ int main(int argc, char *argv[])
 {
     
     Debug::SetDebugActive();
+    EngineManager Engine(windowName.c_str());
 
     //Implement Menu here?
     Engine.Init();
@@ -33,7 +35,6 @@ int main(int argc, char *argv[])
     while (!done)
     {
         aTimer.resetTicksTimer(); // resets a frame timer to zero
-
         Engine.Input();
         Engine.Update();
         Engine.Render();

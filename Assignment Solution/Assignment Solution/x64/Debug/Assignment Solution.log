@@ -1,1 +1,7 @@
-﻿  Assignment Solution.vcxproj -> C:\Users\charl\OneDrive\Documents\Games Programming\Assignment\Games-Programming-Assignment\Assignment Solution\x64\Debug\Assignment Solution.exe
+﻿  Assignment Solution.cpp
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Assignment Solution.cpp(47,28): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Assignment Solution.cpp(48,26): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Assignment Solution.cpp(53,23): warning C4244: 'argument': conversion from 'float' to 'Uint32', possible loss of data
+  EngineManager.cpp
+  Generating Code...
+  Assignment Solution.vcxproj -> C:\Projects\Games-Programming-Assignment\Assignment Solution\x64\Debug\Assignment Solution.exe

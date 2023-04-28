@@ -9,6 +9,7 @@
 #include "ShapeRendering.h"
 // GameObject
 #include "Object.h"
+#include "Scene.h"
 
 // Components
 
@@ -28,16 +29,9 @@ public:
 	SDL_Window* window;
 	SDL_Renderer* renderer;
 
-	// All the GameObjects
-	vector<GameObject*> gameObjects;
-	void AddGameObject(GameObject gameObject);
-
-	// GameObject Functions
-	void FindObjectWithTag(string tag);
-	void DestroyObjectsWithTag(string tag);
-	void DestroyObject(GameObject* object);
-
-	void CreateGameObject(string gmObjTag = "default");
+	Scene* current_scene = nullptr;
+	vector<Scene*> scenes;
+	
 };
 #endif
 
