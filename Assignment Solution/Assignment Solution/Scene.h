@@ -1,6 +1,8 @@
-#include "Object.h"
+
 #include "Debug.h"
 #include "SDL.h"
+#include "Object.h"
+
 using namespace std;
 
 class Scene

@@ -11,8 +11,10 @@ EngineManager::EngineManager(const char* name, int posX, int posY, int width, in
     EngineManager::renderer;
 
     EngineManager::current_scene;
+    //Debug::SetDebugActive();
 
-    current_scene = new Scene("Test");
+    current_scene = new Scene("Placeholder");
+    Debug::Log("Test Scene initialised");
 
     if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
         Debug::Error("Something went wrong...");

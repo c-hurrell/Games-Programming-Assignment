@@ -1,9 +1,12 @@
 
 #include "Scene.h"
+#include <iostream>
 
 Scene::Scene(string scene_name)
 {
 	CreateGameObject("Test");
+	//Debug::SetDebugActive();
+	Debug::Log("WHY YOU NO DEBUG");
 }
 Scene::~Scene()
 {
