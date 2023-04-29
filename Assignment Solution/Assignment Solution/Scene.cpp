@@ -1,21 +1,29 @@
-
 #include "Scene.h"
-#include <iostream>
 
 Scene::Scene(string scene_name)
 {
-	CreateGameObject("Test");
-	//Debug::SetDebugActive();
-	Debug::Log("WHY YOU NO DEBUG");
+	Debug::Log("Loading Scene");
+	CreateTestGameObject("Test");
+	for (GameObject* gameObject : gameObjects)
+	{
+		//gameObject->scene = this;
+	}
 }
 Scene::~Scene()
 {
-
+	for (GameObject* c : gameObjects)
+	{
+		delete c;
+	}
+	gameObjects.clear();
 }
 
 void Scene::Start()
 {
-	//initGameObjects()
+	for (GameObject* gameObject : gameObjects)
+	{
+		gameObject->Start();
+	}
 }
 void Scene::Update()
 {
@@ -33,7 +41,7 @@ void Scene::Render(SDL_Renderer* renderer)
 }
 
 
-void Scene::CreateGameObject(string gmObjTag)
+void Scene::CreateTestGameObject(string gmObjTag)
 {
     GameObject* gameObject = new GameObject(gmObjTag);
     // Add Components

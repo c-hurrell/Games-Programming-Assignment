@@ -12,9 +12,8 @@ EngineManager::EngineManager(const char* name, int posX, int posY, int width, in
 
     EngineManager::current_scene;
     //Debug::SetDebugActive();
-
-    current_scene = new Scene("Placeholder");
-    Debug::Log("Test Scene initialised");
+    
+    
 
     if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
         Debug::Error("Something went wrong...");
@@ -25,6 +24,12 @@ EngineManager::EngineManager(const char* name, int posX, int posY, int width, in
 
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     Debug::Log("Renderer active");
+    TextureManager::SetRenderer(renderer);
+
+    // SETUP DONE INITIALISE FIRST SCENE HERE
+
+    current_scene = new Scene("Test");
+    Debug::Log("Test Scene initialised");
 }
 
 void EngineManager::Init()

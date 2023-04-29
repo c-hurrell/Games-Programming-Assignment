@@ -5,7 +5,8 @@ GameObject::GameObject(string objectTag)
 {
 	tag = objectTag;
 	transform2D = AddComponent<Transform2D>();
-	r2D = AddComponent<Render2D>();
+	//r2D = AddComponent<Render2D>();
+	sprite = AddComponent<Sprite>();
 	
 }
 GameObject::~GameObject()
@@ -18,21 +19,14 @@ GameObject::~GameObject()
 	// Deletes default components from object as well
 	delete transform2D;
 	delete r2D;
-}
-
-void GameObject::AddComponent(Component* component)
-{
-	Debug::Log("Component Added " + component->tag + " to GameObject " + tag);
-	component->gameObject = this;
-	components.push_back(component);
-	component->Start();
+	delete sprite;
 }
 Component* GameObject::GetComponent(string tag)
 {
 	for (Component* c : components)
 	{
 		if (c->tag == tag) {
-			Debug::Log("Component found on: " + c->gameObject->tag);
+			Debug::Log( tag + " Component found on: " + c->gameObject->tag);
 			return c;
 		}
 		else {
@@ -54,16 +48,13 @@ void GameObject::DisableObject()
 
 void GameObject::Start()
 {
-	for (Component* c : components)
-	{
-		c->Start();
-	}
+
 }
 void GameObject::Update()
 {
 	for (Component* c : components)
 	{
-		if (c->tag != "Render2D" && c->IsActive == true) {
+		if ((c->tag != "Render2D" || c->tag != "Sprite") && c->IsActive == true) {
 			c->Update();
 		}
 	}
@@ -84,14 +75,35 @@ void GameObject::OnDisable()
 }
 void GameObject::Render(SDL_Renderer* renderer)
 {
-	if (r2D == nullptr && IsEnabled) {
-		Debug::Error("Render2D Component missing for object " + tag);
+	if (IsEnabled)
+	{
+		if (sprite != nullptr && sprite->IsActive)
+		{
+			if (r2D != nullptr)
+			{
+				r2D->IsActive = false;
+			}
+			SDL_RenderCopy(renderer, sprite->texture, NULL, sprite->dest);
+		}
+		else if (r2D != nullptr && r2D->IsActive)
+		{
+			r2D->RenderShape(renderer);
+		}
+		else
+		{
+			Debug::Error("No rendering component detected");
+		}
 	}
-	// Added a nullptr check in case
-	else if (r2D != nullptr && r2D->IsActive != true) {
-		// Impliment function to not render object
-	}
-	else {
-		r2D->RenderShape(renderer);
+	
+	
+}
+void GameObject::DisableComponentWithTag(string tag)
+{
+	for (int i = 0; i < components.size() - 1; i++)
+	{
+		if (components[i]->tag == tag)
+		{
+			components[i]->IsActive = false;
+		}
 	}
 }

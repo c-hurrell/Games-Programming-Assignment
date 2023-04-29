@@ -15,8 +15,7 @@ public:
     float width = 100;
     float height = 100;
 
-    float scaleX = 1;
-    float scaleY = 1;
+    float scale = 1;
 
     float posX = 0;
     float posY = 0;

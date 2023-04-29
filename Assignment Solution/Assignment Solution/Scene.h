@@ -1,9 +1,12 @@
 
+#include <iostream>
 #include "Debug.h"
 #include "SDL.h"
 #include "Object.h"
 
 using namespace std;
+
+class GameObject;
 
 class Scene
 {
@@ -22,6 +25,6 @@ public:
 	void DestroyObjectsWithTag(string tag);
 	void DestroyObject(GameObject* object);
 
-	void CreateGameObject(string gmObjTag = "default");
+	void CreateTestGameObject(string gmObjTag = "default");
 	
 };

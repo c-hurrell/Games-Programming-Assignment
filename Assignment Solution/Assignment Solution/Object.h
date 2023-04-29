@@ -9,6 +9,7 @@
 #include "Component.h"
 #include "Transform2D.h"
 #include "Render2D.h"
+#include "Sprite.h"
 #include "PlayerMouseInput.h"
 
 using namespace std;
@@ -16,6 +17,8 @@ using namespace std;
 // Forward implementation
 class Component;
 class Render2D;
+class Sprite;
+
 
 class GameObject
 {
@@ -42,14 +45,14 @@ public:
 	template <typename C>
 	C* AddComponent();
 
-	// Old AddComponent Method
-	void AddComponent(Component *component);
+	void DisableComponentWithTag(string tag);
 
 	Component* GetComponent(string tag);
 
 	// Default Components - > Should be on every object created.
 	Transform2D* transform2D = nullptr;
 	Render2D* r2D = nullptr;
+	Sprite* sprite = nullptr;
 
 	// Used to enable and disable an object
 	void EnableObject();

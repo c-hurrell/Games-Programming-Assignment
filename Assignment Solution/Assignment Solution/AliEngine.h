@@ -4,6 +4,7 @@
 // A master file for the Engine components
 #include "EngineManager.h"
 #include "SDL.h"
+//#include "SDL_image.h"
 #include "SZ_Timer.h"
 // Debug logging
 #include "Debug.h"

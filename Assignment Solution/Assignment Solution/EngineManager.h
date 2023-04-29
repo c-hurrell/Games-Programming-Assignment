@@ -5,14 +5,15 @@
 #include "SZ_Timer.h"
 #include "windows.h"
 
+#include "TextureManager.h"
 #include "Debug.h"
 #include "ShapeRendering.h"
-// GameObject
-#include "Object.h"
+// Scenes
 #include "Scene.h"
 
 // Components
 
+class Scene;
 
 #define DELAY 5000
 class EngineManager

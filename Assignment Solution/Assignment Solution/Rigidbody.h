@@ -7,7 +7,6 @@
 
 class GameObject;
 class Transform2D;
-class Vector2;
 
 class Rigidbody :
     public Component
@@ -18,10 +17,11 @@ public:
     SDL_Rect collider;
     
     // Collider Checks
-    bool collisionCheck;
+    bool collisionCheck = false;
     // Collision Force application
-    float collisionImpulseX = 0;
-    float collisionImpulseY = 0;
+    Vector2 momentum;
+
+    Vector2 collisionImpluse;
 
     // Speed Values - 2D Vector
     Vector2 velocity;
