@@ -6,6 +6,7 @@ Sprite::Sprite()
 	dest = new SDL_Rect();
 
 	texture = TextureManager::LoadTexture(sprite_address);
+	
 }
 
 void Sprite::Start()
@@ -41,10 +42,16 @@ void Sprite::OnDisable()
 
 }
 
+void Sprite::ResetTexture()
+{
+	texture = defTexture;
+}
+
 void Sprite::SetSprite(string sprite_loc)
 {
 	sprite_address = sprite_loc;
 	texture = TextureManager::LoadTexture(sprite_address);
+	defTexture = texture;
 }
 void Sprite::SetTexture(SDL_Texture* tex)
 {
@@ -53,5 +60,12 @@ void Sprite::SetTexture(SDL_Texture* tex)
 
 void Sprite::RenderSprite()
 {
-	SDL_RenderCopy(TextureManager::renderer, texture, NULL, dest);
+	if (texture != nullptr)
+	{
+		SDL_RenderCopy(TextureManager::renderer, texture, NULL, dest);
+	}
+	else
+	{
+		texture = TextureManager::LoadTexture(sprite_address);
+	}
 }

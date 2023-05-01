@@ -21,6 +21,7 @@ class Component;
 class Render2D;
 class Sprite;
 class Text;
+class Rigidbody;
 
 
 class GameObject

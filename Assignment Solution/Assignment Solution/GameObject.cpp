@@ -5,6 +5,7 @@ GameObject::GameObject()
 {
 	tag = "default";
 	transform2D = AddComponent<Transform2D>();
+	rb = AddComponent<Rigidbody>();
 	r2D = AddComponent<Render2D>();
 	sprite = AddComponent<Sprite>();
 	//text = AddComponent<Text>();
@@ -21,6 +22,7 @@ GameObject::~GameObject()
 	delete transform2D;
 	delete r2D;
 	delete sprite;
+	delete rb;
 }
 Component* GameObject::GetComponent(string tag)
 {
@@ -64,14 +66,16 @@ void GameObject::OnEnable()
 {
 	for (Component* c : components)
 	{
-		c->OnEnable();
+		if (c->IsActive)
+			c->OnEnable();
 	}
 }
 void GameObject::OnDisable()
 {
 	for (Component* c : components)
 	{
-		c->OnDisable();
+		if (c->IsActive)
+			c->OnDisable();
 	}
 }
 void GameObject::Render(SDL_Renderer* renderer)

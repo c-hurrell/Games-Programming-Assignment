@@ -56,7 +56,7 @@ namespace TextureManager {
 		{
 			Debug::Error("File Not Found!");
 		}
-		fonts[fontType] = TTF_OpenFont(filename.c_str(), 10);
+		fonts[fontType] = TTF_OpenFont(filename.c_str(), 20);
 
 
 		surface = SDL_CreateRGBSurface(0, FONT_TEXTURE_SIZE, FONT_TEXTURE_SIZE, 32, 0, 0, 0, 0xff);

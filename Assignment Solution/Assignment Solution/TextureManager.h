@@ -22,6 +22,7 @@ namespace TextureManager
 {
 	enum {
 		MAIN_FONT,
+		HYDRO_FONT,
 		//... OTHER FONTS HERE
 		FONT_MAX
 	};

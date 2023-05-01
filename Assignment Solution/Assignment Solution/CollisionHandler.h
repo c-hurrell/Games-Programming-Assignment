@@ -8,10 +8,9 @@
 
 class CollisionHandler
 {
-	vector<GameObject*> gameObjects;
-
-	void CheckForCollisions(); //Checks each gameObject with a rigidbody to see if it collided with another one
-
+public:
+	void CheckForCollisions(vector<GameObject*> gameObjects); //Checks each gameObject with a rigidbody to see if it collided with another one
+	//void PresentCollisions();
 };
 #endif
 

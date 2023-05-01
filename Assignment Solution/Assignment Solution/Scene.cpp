@@ -4,7 +4,7 @@ Scene::Scene(string scene_name)
 {
 	tag = scene_name;
 	Debug::Log("Loading Scene");
-	//CreateTestGameObject();
+	CreateMouseGameObject();
 }
 Scene::~Scene()
 {
@@ -24,6 +24,7 @@ void Scene::Start()
 }
 void Scene::Update()
 {
+	co.CheckForCollisions(gameObjects);
 	for (GameObject* gameObject : gameObjects)
 	{
 		gameObject->Update();
@@ -38,9 +39,12 @@ void Scene::Render(SDL_Renderer* renderer)
 }
 
 
-void Scene::CreateTestGameObject()
+void Scene::CreateMouseGameObject()
 {
     GameObject* gameObject = new GameObject();
+	gameObject->tag = "PlayerMouse";
+	gameObject->transform2D->width = 10;
+	gameObject->transform2D->height = 10;
     // Add Components
     gameObject->AddComponent<PlayerMouseInput>();
 	gameObjects.push_back(gameObject);    

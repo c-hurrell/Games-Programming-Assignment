@@ -5,6 +5,7 @@
 #include "Vector2.h"
 #include "SDL.h"
 #include "TextureManager.h"
+#include "Collision.h"
 
 class GameObject;
 class Transform2D;
@@ -17,7 +18,7 @@ public:
     // Collider Dimensions
     SDL_Rect collider;
     // Objects it collided with
-    vector<GameObject*> collidedWith;
+    vector<GameObject*> collisions;
     // Collider Checks
     bool collisionCheck = false;
     // Collision Force application

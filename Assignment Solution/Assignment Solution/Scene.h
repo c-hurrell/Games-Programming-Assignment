@@ -5,6 +5,7 @@
 #include "Debug.h"
 #include "SDL.h"
 #include "GameObject.h"
+#include "CollisionHandler.h"
 
 using namespace std;
 
@@ -21,7 +22,12 @@ public:
 	void Start();
 	void Update();
 	void Render(SDL_Renderer* renderer);
+
+	CollisionHandler co;
+
 	// All the GameObjects
+
+
 	vector<GameObject*> gameObjects;
 	void AddGameObject(GameObject gameObject);
 
@@ -30,7 +36,7 @@ public:
 	void DestroyObjectsWithTag(string tag);
 	void DestroyObject(GameObject* object);
 
-	void CreateTestGameObject();
+	void CreateMouseGameObject();
 
 	template <typename T>
 	T* AddGameObject();

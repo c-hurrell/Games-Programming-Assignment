@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Assignment Solution.cpp" />
+    <ClCompile Include="Collision.cpp" />
     <ClCompile Include="CollisionHandler.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Debug.cpp" />
@@ -135,6 +136,9 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Logo.cpp" />
+    <ClCompile Include="LogoScript.cpp" />
+    <ClCompile Include="LogoText.cpp" />
+    <ClCompile Include="MouseClickCheck.cpp" />
     <ClCompile Include="PlayerMouseInput.cpp" />
     <ClCompile Include="Render2D.cpp" />
     <ClCompile Include="Rigidbody.cpp" />
@@ -147,15 +151,20 @@
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Transform2D.cpp" />
     <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Collision.h" />
     <ClInclude Include="CollisionHandler.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Debug.h" />
     <ClInclude Include="EngineManager.h" />
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="LogoScript.h" />
+    <ClInclude Include="MouseClickCheck.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Logo.h" />
+    <ClInclude Include="LogoText.h" />
     <ClInclude Include="PlayerMouseInput.h" />
     <ClInclude Include="Render2D.h" />
     <ClInclude Include="Rigidbody.h" />
@@ -168,6 +177,7 @@
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Transform2D.h" />
     <ClInclude Include="Vector2.h" />
+    <ClInclude Include="Wall.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

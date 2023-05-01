@@ -2,7 +2,7 @@
 
 Text::Text()
 {
-	
+
 }
 
 void Text::Start()
@@ -26,14 +26,19 @@ void Text::ConvertIntToText(int value)
 {
 	message = to_string(value);
 }
+void Text::AddLine(string line)
+{
+	lines.push_back(line);
+}
 
 void Text::RenderText()
 {
+	Vector2 windowSize = TextureManager::GetWindowSize();
 	int i, character, x, y;
 	if (transform2D != nullptr)
 	{
-		x = transform2D->posX;
-		y = transform2D->posY;
+		x = (transform2D->posX / 800 * windowSize.x) - (transform2D->width/2);
+		y = (transform2D->posY / 600 * windowSize.y) - (transform2D->height/2);
 	}
 	else
 	{
@@ -41,28 +46,47 @@ void Text::RenderText()
 		x = 0;
 		y = 0;
 	}
-	const char* text = message.c_str();
-	SDL_Rect* glyph, glyph_dest;
 
-	SDL_SetTextureColorMod(TextureManager::font_textures[fontType], r, g, b);
-
-	i = 0;
-
-	character = text[i++];
-
-	while (character)
+	SDL_Rect* glyph = nullptr;
+	SDL_Rect glyph_dest;
+	for (string line : lines)
 	{
-		glyph = &TextureManager::glyphs[fontType][character];
 
-		glyph_dest.x = x;
-		glyph_dest.y = y;
-		glyph_dest.w = glyph->w;
-		glyph_dest.h = glyph->h;
+		const char* text = line.c_str();
+		
 
-		SDL_RenderCopy(TextureManager::renderer, TextureManager::font_textures[fontType], glyph, &glyph_dest);
+		SDL_SetTextureColorMod(TextureManager::font_textures[fontType], r, g, b);
 
-		x += glyph->w;
+		i = 0;
 
 		character = text[i++];
+
+		while (character)
+		{
+			glyph = &TextureManager::glyphs[fontType][character];
+
+
+			glyph_dest.x = x;
+			glyph_dest.y = y;
+			glyph_dest.w = glyph->w;
+			glyph_dest.h = glyph->h;
+
+			SDL_RenderCopy(TextureManager::renderer, TextureManager::font_textures[fontType], glyph, &glyph_dest);
+
+			x += glyph->w;
+
+			character = text[i++];
+		}
+		// After line is done reset x
+		if (transform2D != nullptr)
+		{
+			x = (transform2D->posX / 800 * windowSize.x) - (transform2D->width / 2);
+		}
+		else
+		{
+			Debug::Error("Transform2D missing from " + gameObject->tag);
+		}
+		y += glyph->h;
 	}
+	
 }

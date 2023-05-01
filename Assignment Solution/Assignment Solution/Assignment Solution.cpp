@@ -5,9 +5,11 @@
 #include <string>
 #include <vector>
 
+// Rename this to mouse cursor tracker
 #include "Input.h"
 #include "AliEngine.h"
 #include "Debug.h"
+#include"MouseClickCheck.h"
 
 
 SZ_Timer aTimer;
@@ -25,6 +27,9 @@ int main(int argc, char *argv[])
 {
     
     Debug::SetDebugActive();
+
+    MouseClickCheck::SetMouseClick(false);
+
     EngineManager Engine(windowName.c_str());
 
     //Implement Menu here?
@@ -78,12 +83,14 @@ int main(int argc, char *argv[])
             { 
                 Debug::Log("You clicked me!");
                 Engine.input->mouse_clicked = true;
+                MouseClickCheck::SetMouseClick(true);
                 break;
             }
             else if (event.type == SDL_MOUSEBUTTONUP)
             {
                 Debug::Log("You let go!");
                 Engine.input->mouse_clicked = false;
+                MouseClickCheck::SetMouseClick(false);
                 break;
             }
         } // end of handling event.

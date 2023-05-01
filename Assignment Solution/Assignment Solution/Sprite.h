@@ -15,6 +15,7 @@ class Sprite :
     
     
 public:
+    SDL_Texture* defTexture;
     SDL_Texture* texture;
     SDL_Rect* dest;
     string sprite_address = "assets/TexNull.png";
@@ -22,6 +23,7 @@ public:
     Sprite();
     ~Sprite() = default;
 
+    void ResetTexture();
     void SetSprite(string sprite_loc = "assets/TexNull.png");
     void SetTexture(SDL_Texture* texture);
 

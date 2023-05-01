@@ -4,6 +4,8 @@
 // Put your GameObjects here
 //#include "MyGameObject.h" <- Example
 #include "Logo.h"
+#include "LogoText.h"
+#include "Wall.h"
 
 
 class SplashScreen :

@@ -32,6 +32,7 @@ EngineManager::EngineManager(const char* name, int posX, int posY, int width, in
     TextureManager::SetRenderer(renderer);
     // Additional Setup
     TextureManager::SetupFont(0, "assets\\fonts\\arial.ttf");
+    TextureManager::SetupFont(1, "assets\\fonts\\ATTFSHINGOPROREGULAR.TTF");
     TextureManager::SetWindow(window);
     Vector2 origin(width / 2, height / 2);
     TextureManager::origin = origin;

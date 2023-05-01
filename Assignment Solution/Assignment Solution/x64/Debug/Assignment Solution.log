@@ -1,4 +1,2 @@
-﻿  EngineManager.cpp
-C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\EngineManager.cpp(36,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\EngineManager.cpp(36,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+﻿  LogoScript.cpp
   Assignment Solution.vcxproj -> C:\Projects\Games-Programming-Assignment\Assignment Solution\x64\Debug\Assignment Solution.exe

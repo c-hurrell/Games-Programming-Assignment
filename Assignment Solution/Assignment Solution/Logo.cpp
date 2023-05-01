@@ -2,6 +2,7 @@
 
 Logo::Logo() : GameObject()
 {
+	AddComponent<LogoScript>();
 	tag = "Logo";
 	transform2D->posX = 400;
 	transform2D->posY = 300;

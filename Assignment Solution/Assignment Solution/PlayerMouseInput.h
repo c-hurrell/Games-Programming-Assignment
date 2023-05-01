@@ -2,6 +2,7 @@
 #include "GameObject.h"
 #include "Transform2D.h"
 #include "TextureManager.h"
+#include "MouseClickCheck.h"
 
 class GameObject; 
 class Transform2D;

@@ -14,11 +14,13 @@ public:
 
     float width = 100;
     float height = 100;
+    //Vector2 dimensions;
 
     float scale = 1;
 
     float posX = 0;
     float posY = 0;
+    //Vector2 pos;
 
     double rotation = 0;
 

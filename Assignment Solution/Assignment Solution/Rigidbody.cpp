@@ -28,6 +28,11 @@ void Rigidbody::Update()
 	collider.h = transform2D->height * transform2D->scale;
 	collider.x = ((transform2D->posX / 800) * windowSize.x) - (collider.w / 2); // -(TextureManager::origin.x * (dest->w / 800 * windowSize.x) / 800);
 	collider.y = ((transform2D->posY / 600) * windowSize.y) - (collider.h / 2);
+
+	if (collisions.empty() == false)
+	{
+		collisionCheck = true;
+	}
 }
 
 void Rigidbody::OnEnable()

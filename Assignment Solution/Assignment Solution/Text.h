@@ -13,6 +13,8 @@ public:
     Text();
     ~Text() = default;
 
+    vector<string> lines;
+
     string message = "TESTY TEST TEST";
     int r = 255;
     int g = 255;
@@ -26,6 +28,9 @@ public:
 
 
     void ConvertIntToText(int value);
+
+    void AddLine(string line);
+
     void RenderText();
 
 };

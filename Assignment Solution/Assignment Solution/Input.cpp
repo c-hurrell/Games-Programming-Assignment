@@ -42,12 +42,10 @@ void InputHandler::GetMousePos()
 	}
 	else if (frame_counter <= 10 && mouse_clicked == false)
 	{
-		Debug::Log("Count");
 		frame_counter += 1;
 	}
 	else if(mouse_clicked == false && frame_counter > 10)
 	{
-		Debug::Log("Check");
 		currentMouse = mouseTexture;
 	}
 
