@@ -19,17 +19,29 @@ EngineManager::EngineManager(const char* name, int posX, int posY, int width, in
         Debug::Error("Something went wrong...");
     }
 
-    window = SDL_CreateWindow(name, posX, posY, width, height, SDL_WINDOW_RESIZABLE);
+    window = SDL_CreateWindow(name, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_RESIZABLE);
     Debug::Log("AliEngine window launched");
 
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     Debug::Log("Renderer active");
-    TextureManager::SetRenderer(renderer);
 
+    //SDL_RenderSetLogicalSize(renderer, width, height);
+
+    // Make sure all SDL Renderer stuff is set up
+
+    TextureManager::SetRenderer(renderer);
+    // Additional Setup
+    TextureManager::SetupFont(0, "assets\\fonts\\arial.ttf");
+    TextureManager::SetWindow(window);
+    Vector2 origin(width / 2, height / 2);
+    TextureManager::origin = origin;
+
+    input = new InputHandler();
+    
     // SETUP DONE INITIALISE FIRST SCENE HERE
 
-    current_scene = new Scene("Test");
-    Debug::Log("Test Scene initialised");
+    SplashScreen* splash = new SplashScreen();
+    current_scene = dynamic_cast<Scene*>(splash);
 }
 
 void EngineManager::Init()
@@ -38,6 +50,13 @@ void EngineManager::Init()
 }
 void EngineManager::Input()
 {
+
+    
+    //Input::CheckKeyInput();
+
+
+
+
     // Checks if Debug has been toggled
     if (GetKeyState(0x51) < 0) {
         if (!Debug::active && !debugToggle) {
@@ -74,6 +93,7 @@ void EngineManager::Input()
 }
 void EngineManager::Update()
 {
+    input->GetMousePos();
     current_scene->Update();
 }
 void EngineManager::Render()
@@ -83,7 +103,9 @@ void EngineManager::Render()
     //clear the screen
     SDL_RenderClear(renderer);
     
+    
     current_scene->Render(renderer);
+    SDL_RenderCopy(TextureManager::renderer, input->currentMouse, NULL, input->dest);
 
     SDL_RenderPresent(renderer);
 }

@@ -6,5 +6,10 @@ struct Vector2
 	float y;
 	Vector2(float x_val = 0, float y_val = 0); 
 	~Vector2() = default;
+
+	Vector2 operator*(const Vector2& other) const;
+	Vector2 operator-(const Vector2& other) const;
+	Vector2 operator+(const Vector2& other) const;
+	Vector2 operator/(const Vector2& other) const;
 };
 #endif

@@ -2,12 +2,9 @@
 
 Scene::Scene(string scene_name)
 {
+	tag = scene_name;
 	Debug::Log("Loading Scene");
-	CreateTestGameObject("Test");
-	for (GameObject* gameObject : gameObjects)
-	{
-		//gameObject->scene = this;
-	}
+	//CreateTestGameObject();
 }
 Scene::~Scene()
 {
@@ -41,9 +38,9 @@ void Scene::Render(SDL_Renderer* renderer)
 }
 
 
-void Scene::CreateTestGameObject(string gmObjTag)
+void Scene::CreateTestGameObject()
 {
-    GameObject* gameObject = new GameObject(gmObjTag);
+    GameObject* gameObject = new GameObject();
     // Add Components
     gameObject->AddComponent<PlayerMouseInput>();
 	gameObjects.push_back(gameObject);    

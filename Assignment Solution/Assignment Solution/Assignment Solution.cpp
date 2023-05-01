@@ -5,14 +5,14 @@
 #include <string>
 #include <vector>
 
+#include "Input.h"
 #include "AliEngine.h"
 #include "Debug.h"
 
 
 SZ_Timer aTimer;
 string windowName = "Charles T Hurrell(25296839) || CPG2015 || AliEngine || FPS : ";
-
-const int DELTA_TIME = 16;
+const int DELTA_TIME = 20;
 bool done = false;
 
 using namespace std;
@@ -30,6 +30,8 @@ int main(int argc, char *argv[])
     //Implement Menu here?
     Engine.Init();
 
+    SDL_ShowCursor(SDL_DISABLE);
+
     SDL_Rect r = ShapeRendering::Rectangle(0, 0, 50, 50);
 
     while (!done)
@@ -41,10 +43,11 @@ int main(int argc, char *argv[])
         
         //r.x++;
 
-        if (aTimer.getTicks() < DELTA_TIME)
+        float ticks = aTimer.getTicks();
+
+        if (ticks < DELTA_TIME)
         {
-            //Debug::Log("Ticks are", aTimer.getTicks());
-            float fpsDelay = DELTA_TIME - aTimer.getTicks();
+            float fpsDelay = DELTA_TIME - ticks;
             int fpsCount = (fpsDelay > 0) ? 1000.0f / fpsDelay : 0.0f;
             string fps = to_string(fpsCount);
             string FPSCount = windowName + fps;
@@ -65,6 +68,23 @@ int main(int argc, char *argv[])
                 Debug::Log("Exit Game...");
                 done = true;
                 // Ctrl + C in Console
+            }
+            else if (event.type == SDL_WINDOWEVENT_RESIZED)
+            {
+                // Checks before getting the mouse position the current window size
+                
+            }
+            else if (event.type == SDL_MOUSEBUTTONDOWN)
+            { 
+                Debug::Log("You clicked me!");
+                Engine.input->mouse_clicked = true;
+                break;
+            }
+            else if (event.type == SDL_MOUSEBUTTONUP)
+            {
+                Debug::Log("You let go!");
+                Engine.input->mouse_clicked = false;
+                break;
             }
         } // end of handling event.
 

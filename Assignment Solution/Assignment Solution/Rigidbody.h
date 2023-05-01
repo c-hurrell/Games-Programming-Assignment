@@ -1,9 +1,10 @@
 #ifndef RIGIDBODY
 #define RIGIDBODY
-#include "Object.h"
+#include "GameObject.h"
 #include "Transform2D.h"
 #include "Vector2.h"
 #include "SDL.h"
+#include "TextureManager.h"
 
 class GameObject;
 class Transform2D;
@@ -15,7 +16,8 @@ public:
     Transform2D* transform2D = nullptr;
     // Collider Dimensions
     SDL_Rect collider;
-    
+    // Objects it collided with
+    vector<GameObject*> collidedWith;
     // Collider Checks
     bool collisionCheck = false;
     // Collision Force application

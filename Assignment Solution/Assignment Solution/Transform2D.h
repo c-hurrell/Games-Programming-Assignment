@@ -1,7 +1,7 @@
 #ifndef TRANSFORM
 #define TRANSFORM
 
-#include "Object.h"
+#include "GameObject.h"
 
 class GameObject;
 

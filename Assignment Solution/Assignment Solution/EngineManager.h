@@ -2,16 +2,20 @@
 #define ENGINEMANAGER_H
 
 #include "SDL.h"
+#include "SDL_ttf.h"
 #include "SZ_Timer.h"
 #include "windows.h"
 
 #include "TextureManager.h"
 #include "Debug.h"
 #include "ShapeRendering.h"
+#include "Input.h"
 // Scenes
-#include "Scene.h"
+#include "Scene.h" // <- Base Class for all scenes
+#include "SplashScreen.h" // <- Plays at launch
+// MAIN MENU SCENE PLACEHOLDER
+// GAME SCENE PLACEHOLDER
 
-// Components
 
 class Scene;
 
@@ -29,6 +33,7 @@ public:
 	//bool Running();
 	SDL_Window* window;
 	SDL_Renderer* renderer;
+	InputHandler* input;
 
 	Scene* current_scene = nullptr;
 	vector<Scene*> scenes;

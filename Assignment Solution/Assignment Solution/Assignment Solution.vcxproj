@@ -128,36 +128,43 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Assignment Solution.cpp" />
-    <ClCompile Include="Collision.cpp" />
+    <ClCompile Include="CollisionHandler.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Debug.cpp" />
     <ClCompile Include="EngineManager.cpp" />
-    <ClCompile Include="Object.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="Logo.cpp" />
     <ClCompile Include="PlayerMouseInput.cpp" />
     <ClCompile Include="Render2D.cpp" />
     <ClCompile Include="Rigidbody.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="ShapeRendering.cpp" />
+    <ClCompile Include="SplashScreen.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="SZ_Timer.cpp" />
+    <ClCompile Include="Text.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Transform2D.cpp" />
     <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AliEngine.h" />
-    <ClInclude Include="Collision.h" />
+    <ClInclude Include="CollisionHandler.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Debug.h" />
     <ClInclude Include="EngineManager.h" />
-    <ClInclude Include="Object.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Input.h" />
+    <ClInclude Include="Logo.h" />
     <ClInclude Include="PlayerMouseInput.h" />
     <ClInclude Include="Render2D.h" />
     <ClInclude Include="Rigidbody.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="ShapeRendering.h" />
+    <ClInclude Include="SplashScreen.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="SZ_Timer.h" />
+    <ClInclude Include="Text.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Transform2D.h" />
     <ClInclude Include="Vector2.h" />

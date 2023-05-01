@@ -1,6 +1,7 @@
 #pragma once
-#include "Object.h"
+#include "GameObject.h"
 #include "Transform2D.h"
+#include "TextureManager.h"
 
 class GameObject; 
 class Transform2D;

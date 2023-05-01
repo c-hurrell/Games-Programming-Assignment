@@ -23,10 +23,11 @@ void Rigidbody::Start()
 
 void Rigidbody::Update()
 {
-	collider.x = transform2D->posX;
-	collider.y = transform2D->posY;
-	collider.w = transform2D->width * transform2D->scale;
+	Vector2 windowSize = TextureManager::GetWindowSize();
+	collider.w = transform2D->width * transform2D->scale; 
 	collider.h = transform2D->height * transform2D->scale;
+	collider.x = ((transform2D->posX / 800) * windowSize.x) - (collider.w / 2); // -(TextureManager::origin.x * (dest->w / 800 * windowSize.x) / 800);
+	collider.y = ((transform2D->posY / 600) * windowSize.y) - (collider.h / 2);
 }
 
 void Rigidbody::OnEnable()

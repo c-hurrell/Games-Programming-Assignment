@@ -25,6 +25,7 @@ public:
     void SetSprite(string sprite_loc = "assets/TexNull.png");
     void SetTexture(SDL_Texture* texture);
 
+    void RenderSprite();
 
     void Start() override;
     void Update() override;
