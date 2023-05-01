@@ -6,6 +6,7 @@
 #include "Logo.h"
 #include "LogoText.h"
 #include "Wall.h"
+#include "TextBoxHowToPlay.h"
 
 
 class SplashScreen :

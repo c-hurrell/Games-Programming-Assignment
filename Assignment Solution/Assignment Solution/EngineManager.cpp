@@ -36,6 +36,9 @@ EngineManager::EngineManager(const char* name, int posX, int posY, int width, in
     TextureManager::SetWindow(window);
     Vector2 origin(width / 2, height / 2);
     TextureManager::origin = origin;
+    MouseClickCheck::changeScene(false);
+    cout << *MouseClickCheck::change_scene << endl;
+    
 
     input = new InputHandler();
     
@@ -58,7 +61,7 @@ void EngineManager::Input()
 
 
 
-    // Checks if Debug has been toggled
+    // Checks if Debug has been toggled Q
     if (GetKeyState(0x51) < 0) {
         if (!Debug::active && !debugToggle) {
             Debug::SetDebugActive();
@@ -94,8 +97,16 @@ void EngineManager::Input()
 }
 void EngineManager::Update()
 {
+    
     input->GetMousePos();
     current_scene->Update();
+    if (*MouseClickCheck::change_scene)
+    {
+        delete(current_scene);
+        GameScene* gameScene = new GameScene();
+        current_scene = dynamic_cast<Scene*>(gameScene);
+        MouseClickCheck::changeScene(false);
+    }
 }
 void EngineManager::Render()
 {

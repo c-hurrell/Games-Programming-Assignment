@@ -6,6 +6,7 @@
 #include "SZ_Timer.h"
 #include "windows.h"
 
+//#include "MouseClickCheck.h"
 #include "TextureManager.h"
 #include "Debug.h"
 #include "ShapeRendering.h"
@@ -13,8 +14,7 @@
 // Scenes
 #include "Scene.h" // <- Base Class for all scenes
 #include "SplashScreen.h" // <- Plays at launch
-// MAIN MENU SCENE PLACEHOLDER
-// GAME SCENE PLACEHOLDER
+#include "GameScene.h" // <- Plays after button is pressed on the Splashscreen
 
 
 class Scene;

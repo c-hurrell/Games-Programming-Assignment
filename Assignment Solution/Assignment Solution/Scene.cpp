@@ -43,8 +43,11 @@ void Scene::CreateMouseGameObject()
 {
     GameObject* gameObject = new GameObject();
 	gameObject->tag = "PlayerMouse";
+
 	gameObject->transform2D->width = 10;
 	gameObject->transform2D->height = 10;
+
+	gameObject->sprite->IsActive = false;
     // Add Components
     gameObject->AddComponent<PlayerMouseInput>();
 	gameObjects.push_back(gameObject);    

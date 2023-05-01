@@ -2,8 +2,7 @@
 
 SplashScreen::SplashScreen() : Scene("SplashScreen")
 {
-	AddGameObject<Logo>();
-	AddGameObject<LogoText>();
+	
 
 	int posValx = 0;
 	int posValy = 0;
@@ -23,4 +22,7 @@ SplashScreen::SplashScreen() : Scene("SplashScreen")
 		posValx = 800;
 		posValy = 600;
 	}
+	AddGameObject<Logo>();
+	AddGameObject<LogoText>();
+	AddGameObject<TextBoxHowToPlay>();
 }

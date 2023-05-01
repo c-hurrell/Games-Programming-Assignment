@@ -19,10 +19,6 @@ GameObject::~GameObject()
 	}
 	components.clear();
 	// Deletes default components from object as well
-	delete transform2D;
-	delete r2D;
-	delete sprite;
-	delete rb;
 }
 Component* GameObject::GetComponent(string tag)
 {

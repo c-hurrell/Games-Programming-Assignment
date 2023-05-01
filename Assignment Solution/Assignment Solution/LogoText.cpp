@@ -11,5 +11,5 @@ LogoText::LogoText() : GameObject()
 	text->g = 255;
 	text->b = 200;
 	transform2D->posX = 390;
-	transform2D->posY = 200;
+	transform2D->posY = 400;
 }

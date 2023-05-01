@@ -3,6 +3,8 @@
 #include "TextureManager.h"
 #include "Transform2D.h"
 #include "Rigidbody.h"
+#include "MouseClickCheck.h"
+
 class LogoScript :
     public Component
 {

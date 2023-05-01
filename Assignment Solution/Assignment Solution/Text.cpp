@@ -56,7 +56,6 @@ void Text::RenderText()
 		
 
 		SDL_SetTextureColorMod(TextureManager::font_textures[fontType], r, g, b);
-
 		i = 0;
 
 		character = text[i++];

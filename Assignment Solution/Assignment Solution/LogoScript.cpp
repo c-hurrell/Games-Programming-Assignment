@@ -21,6 +21,11 @@ void LogoScript::Update()
 			{
 				Debug::Log("Collide");
 				gameObject->sprite->SetTexture(red_alien_texture);
+				if (MouseClickCheck::mouse_click)
+				{
+					Debug::Log("I've been pressed");
+					MouseClickCheck::changeScene(true);
+				}
 			}
 		}
 	}

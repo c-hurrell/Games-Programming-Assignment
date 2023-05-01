@@ -25,6 +25,9 @@
     <Filter Include="Header Files\SplashScreen\LogoScripts">
       <UniqueIdentifier>{90ffa4c6-1a8c-440c-bf54-e2fe4d0b04a9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\GameScene">
+      <UniqueIdentifier>{7f8043da-ff39-4193-83ab-152fcc6e04f7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Assignment Solution.cpp">
@@ -102,6 +105,12 @@
     <ClCompile Include="LogoScript.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TextBoxHowToPlay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Transform2D.h">
@@ -175,6 +184,12 @@
     </ClInclude>
     <ClInclude Include="LogoScript.h">
       <Filter>Header Files\SplashScreen\LogoScripts</Filter>
+    </ClInclude>
+    <ClInclude Include="TextBoxHowToPlay.h">
+      <Filter>Header Files\SplashScreen</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>Header Files\GameScene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

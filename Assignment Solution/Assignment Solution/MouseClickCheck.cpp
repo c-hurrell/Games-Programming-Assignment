@@ -7,4 +7,9 @@ namespace MouseClickCheck {
 	{
 		mouse_click = &mouse;
 	}
+	bool* change_scene;
+	void MouseClickCheck::changeScene(bool sceneChange)
+	{
+		change_scene = &sceneChange;
+	}
 }
