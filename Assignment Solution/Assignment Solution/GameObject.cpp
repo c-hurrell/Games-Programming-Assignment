@@ -8,7 +8,6 @@ GameObject::GameObject()
 	rb = AddComponent<Rigidbody>();
 	r2D = AddComponent<Render2D>();
 	sprite = AddComponent<Sprite>();
-	//text = AddComponent<Text>();
 	
 }
 GameObject::~GameObject()

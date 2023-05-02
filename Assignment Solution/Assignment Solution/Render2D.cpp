@@ -24,10 +24,14 @@ void Render2D::OnDisable()
 
 void Render2D::RenderShape(SDL_Renderer* renderer)
 {
+	Vector2 windowSize = TextureManager::GetWindowSize();
+	int posX = (transform2D->posX / 800 * windowSize.x) - transform2D->width / 2;
+	int posY = (transform2D->posY / 600 * windowSize.y) - transform2D->height / 2;
 	switch (shape)
 	{
 	case Rectangle:
-		SDL_Rect r = ShapeRendering::Rectangle(transform2D->posX, transform2D->posY, transform2D->width, transform2D->height);
+		
+		SDL_Rect r = ShapeRendering::Rectangle(posX, posY, transform2D->width, transform2D->height);
 		SDL_SetRenderDrawColor(renderer, 0, 255, 0, 255);
 		SDL_RenderDrawRect(renderer, &r);
 		break;

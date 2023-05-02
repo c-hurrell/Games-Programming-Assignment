@@ -1,4 +1,4 @@
-﻿  CollisionHandler.cpp
-  Wall.cpp
-  Generating Code...
+﻿  Render2D.cpp
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.cpp(28,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Render2D.cpp(29,11): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   Assignment Solution.vcxproj -> C:\Projects\Games-Programming-Assignment\Assignment Solution\x64\Debug\Assignment Solution.exe
