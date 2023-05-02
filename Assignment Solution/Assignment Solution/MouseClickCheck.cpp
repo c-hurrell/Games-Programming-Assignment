@@ -4,6 +4,7 @@ namespace MouseClickCheck {
 
 	bool* mouse_click;
 	bool* change_scene;
+	std::map<int, bool>* keymap;
 
 	void MouseClickCheck::SetMouseClick(bool mouse)
 	{
@@ -13,13 +14,14 @@ namespace MouseClickCheck {
 	{
 		return *mouse_click;
 	}
+	bool GetKeyState(int key)
+	{
+		bool pressed = (*keymap)[key];
+		return pressed;
+	}
 	void MouseClickCheck::changeScene(bool sceneChange)
 	{
-		if (change_scene != nullptr) {
-			std::cout << *change_scene << std::endl;
-		}
 		*change_scene = sceneChange;
-		std::cout << *change_scene << std::endl;
 	}
 	bool MouseClickCheck::GetChangeScene()
 	{

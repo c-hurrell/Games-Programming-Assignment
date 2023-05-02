@@ -3,7 +3,13 @@
 
 #include <iostream>
 #include "Debug.h"
+#include<map>
+#include<vector>
+
 namespace MouseClickCheck {
+
+	extern std::map<int, bool>* keymap;
+	bool GetKeyState(int key);
 
 	extern bool* mouse_click;
 	void SetMouseClick(bool mouse);

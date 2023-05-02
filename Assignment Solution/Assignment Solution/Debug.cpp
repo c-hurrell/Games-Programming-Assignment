@@ -30,6 +30,7 @@ using namespace std;
 namespace Debug {
 
 	bool Debug::active = false;
+	bool Debug::logTicks = false;
 	// ============== LOG METHODS =================
 #pragma region Log_Methods
 	void Debug::Log(string message)
@@ -53,15 +54,6 @@ namespace Debug {
 			SetColour();
 		}
 	}
-	//void Debug::Log(GameObject* object, string message)
-	//{
-	//	if (active != false)
-	//	{
-	//		OutputTime();
-	//		SetColour(MAGENTA); cout << " <::> " << object->tag << message << endl;
-	//		SetColour();
-	//	}
-	//}
 
 #pragma endregion
 
@@ -86,12 +78,37 @@ namespace Debug {
 			SetColour();
 		}
 	}
+
+	void Ticks(std::string message, int ticks)
+	{
+		if (active != false && logTicks != false)
+		{
+			OutputTime();
+			SetColour(YELLOW); cout << " <TT> " << message << ": " << ticks << endl;
+			SetColour();
+		}
+	}
 	
 	void Debug::SetDebugActive(bool activate)
 	{
 		active = activate;
 		OutputTime();
 		SetColour(YELLOW); cout << " <??> " << "Debug Log: ";
+
+		if (active == true) {
+			SetColour(GREEN); cout << "On" << endl; // Set to Green
+		}
+		else {
+			SetColour(RED);  cout << "Off" << endl;
+		}
+		SetColour();
+	}
+
+	void LogTicks(bool active)
+	{
+		logTicks = active;
+		OutputTime();
+		SetColour(YELLOW); cout << " <??> " << "Ticks Log: ";
 
 		if (active == true) {
 			SetColour(GREEN); cout << "On" << endl; // Set to Green

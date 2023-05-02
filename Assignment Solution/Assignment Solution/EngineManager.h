@@ -32,6 +32,7 @@ public:
 	void Exit();
 	//bool IsRunning();
 	//bool Running();
+	int recentlyPressed = 0;
 	SDL_Window* window;
 	SDL_Renderer* renderer;
 	InputHandler* input;

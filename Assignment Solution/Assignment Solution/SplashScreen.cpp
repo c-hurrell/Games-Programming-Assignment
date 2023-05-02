@@ -17,7 +17,7 @@ SplashScreen::SplashScreen() : Scene("SplashScreen")
 		wV->transform2D->posX = posValx;
 		wV->transform2D->posY = 300;
 		wV->transform2D->width = 75;
-		wV->transform2D->height = 1024;
+		wV->transform2D->height = 1080;
 
 		posValx = 800;
 		posValy = 600;

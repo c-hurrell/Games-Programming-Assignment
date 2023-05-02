@@ -4,12 +4,16 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <map>
 
 // Rename this to mouse cursor tracker
 #include "Input.h"
 #include "AliEngine.h"
 #include "Debug.h"
 #include"MouseClickCheck.h"
+
+// Game background audio
+// https://tones.wolfram.com/generate/GItzUqjRjPvqDRb0tXu3dhbqsofIb40HrWDWYFGY9JX1g9
 
 
 SZ_Timer aTimer;
@@ -25,11 +29,16 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    
+    bool debugToggle = false;
+    bool ticksToggle = false;
     Debug::SetDebugActive();
+    Debug::LogTicks();
 
     bool mouseClick = false;    
     MouseClickCheck::mouse_click = &mouseClick;
+
+    map<int, bool> keymap;
+    MouseClickCheck::keymap = &keymap;
 
     EngineManager Engine(windowName.c_str());
 
@@ -43,9 +52,13 @@ int main(int argc, char *argv[])
     while (!done)
     {
         aTimer.resetTicksTimer(); // resets a frame timer to zero
+        
         Engine.Input();
+        Debug::Ticks("Input ticks", aTimer.getTicks());
         Engine.Update();
+        Debug::Ticks("Update ticks", aTimer.getTicks());
         Engine.Render();
+        Debug::Ticks("Render ticks", aTimer.getTicks());
         
         //r.x++;
 
@@ -94,7 +107,50 @@ int main(int argc, char *argv[])
                 mouseClick = false;
                 break;
             }
+            else if (event.type == SDL_KEYDOWN)
+            {
+                keymap[event.key.keysym.sym] = true;
+            }
+            else if (event.type == SDL_KEYUP)
+            {
+                keymap[event.key.keysym.sym] = false;
+            }
         } // end of handling event.
+
+        
+
+        if (keymap[SDLK_F1])
+        {
+            if (!debugToggle)
+            {
+                if (Debug::active == true)
+                    Debug::SetDebugActive(false);
+                else
+                    Debug::SetDebugActive();
+
+                debugToggle = true;
+            }
+        }
+        else
+        {
+            debugToggle = false;
+        }
+        if (keymap[SDLK_F2])
+        {
+            if (!ticksToggle)
+            {
+                if (Debug::logTicks == true)
+                    Debug::LogTicks(false);
+                else
+                    Debug::LogTicks();
+            }
+            ticksToggle = true;
+        }
+        else
+        {
+            ticksToggle = false;
+        }
+
 
     }
     Engine.Exit();

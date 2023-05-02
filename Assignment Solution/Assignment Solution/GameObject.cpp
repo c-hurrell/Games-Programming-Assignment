@@ -95,7 +95,7 @@ void GameObject::Render(SDL_Renderer* renderer)
 		}
 		else
 		{
-			Debug::Error("No rendering component detected or active");
+			//Debug::Error("No rendering component detected or active"); // <- In instances where rendering is intentially disabled this would flag every frame
 		}
 	}
 	

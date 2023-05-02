@@ -7,7 +7,7 @@ GameScene::GameScene() : Scene()
 	Debug::Log("Generating Walls");
 	for (int i = 0; i < 2; i++)
 	{
-
+		AddGameObject<Power>();
 		GameObject* wH = AddGameObject<WallHorizontal>();
 		wH->transform2D->posX = 400;
 		wH->transform2D->posY = posValy;
@@ -17,9 +17,14 @@ GameScene::GameScene() : Scene()
 		wV->transform2D->posX = posValx;
 		wV->transform2D->posY = 300;
 		wV->transform2D->width = 50;
-		wV->transform2D->height = 1024;
+		wV->transform2D->height = 1080;
 
 		posValx = 800;
 		posValy = 600;
 	}
+	for (int i = 0; i < numberOfMeeplings; i++)
+	{
+		AddGameObject<Meepling>();
+	}
+	
 }

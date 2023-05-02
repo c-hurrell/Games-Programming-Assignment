@@ -55,43 +55,20 @@ void EngineManager::Input()
 {
 
     
-    //Input::CheckKeyInput();
-
-
-
-
-    // Checks if Debug has been toggled Q
-    if (GetKeyState(0x51) < 0) {
-        if (!Debug::active && !debugToggle) {
-            Debug::SetDebugActive();
-           
-        }
-        else if (!debugToggle) {
-            Debug::SetDebugActive(false);
-            
-        }
-        debugToggle = true;
+    if (*MouseClickCheck::mouse_click == true)
+    {
+        Debug::Log("Mouse click registered");
     }
-    else {
-        debugToggle = false;
-    }
-    if (GetKeyState(0x10) < 0) {
-        if (!scenes.empty() && !clearScenes) {
-            for (Scene* s : scenes)
-            {
-                delete s;
-            }
-            scenes.clear();
-            Debug::Warning("Scenes Cleared!");
-            Scene* test = new Scene("Test");
+    if (MouseClickCheck::GetKeyState(SDLK_ESCAPE))
+    {
+        auto flag = SDL_GetWindowFlags(window);
+        auto is_fullscreen = flag & SDL_WINDOW_FULLSCREEN;
+        if (is_fullscreen == SDL_WINDOW_FULLSCREEN) {
+            SDL_SetWindowFullscreen(window, 0);
         }
-        else if (!clearScenes) {
-            Debug::Error("No Scene(s) have been initialised!");
+        else {
+            SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN_DESKTOP);
         }
-        clearScenes = true;
-    }
-    else {
-        clearScenes = false;
     }
 }
 void EngineManager::Update()
