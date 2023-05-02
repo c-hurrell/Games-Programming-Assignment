@@ -19,11 +19,9 @@ void LogoScript::Update()
 		{
 			if (collision->tag == "PlayerMouse")
 			{
-				Debug::Log("Collide");
 				gameObject->sprite->SetTexture(red_alien_texture);
-				if (MouseClickCheck::mouse_click)
+				if (*MouseClickCheck::mouse_click == true)
 				{
-					Debug::Log("I've been pressed");
 					MouseClickCheck::changeScene(true);
 				}
 			}

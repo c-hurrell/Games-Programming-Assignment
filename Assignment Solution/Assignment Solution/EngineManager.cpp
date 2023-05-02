@@ -14,6 +14,7 @@ EngineManager::EngineManager(const char* name, int posX, int posY, int width, in
     //Debug::SetDebugActive();
     
     
+    MouseClickCheck::change_scene = &changeScene;
 
     if (SDL_Init(SDL_INIT_EVERYTHING) < 0) {
         Debug::Error("Something went wrong...");
@@ -36,8 +37,6 @@ EngineManager::EngineManager(const char* name, int posX, int posY, int width, in
     TextureManager::SetWindow(window);
     Vector2 origin(width / 2, height / 2);
     TextureManager::origin = origin;
-    MouseClickCheck::changeScene(false);
-    cout << *MouseClickCheck::change_scene << endl;
     
 
     input = new InputHandler();
@@ -100,12 +99,12 @@ void EngineManager::Update()
     
     input->GetMousePos();
     current_scene->Update();
-    if (*MouseClickCheck::change_scene)
+    if (changeScene == true)
     {
         delete(current_scene);
         GameScene* gameScene = new GameScene();
         current_scene = dynamic_cast<Scene*>(gameScene);
-        MouseClickCheck::changeScene(false);
+        changeScene = false;
     }
 }
 void EngineManager::Render()

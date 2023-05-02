@@ -19,7 +19,7 @@ void CollisionHandler::CheckForCollisions(vector<GameObject*> gameObjects)
 		{
 			//Debug::Log(gameObjects[j]->tag);
 			Rigidbody* rb2 = gameObjects[j]->rb;
-			if (rb2 == nullptr || !rb2->IsActive) continue;
+			if (rb2 == nullptr || !rb2->IsActive || gameObjects[i]->tag == gameObjects[j]->tag) continue;
 			int left_x_2 = rb2->collider.x;
 			int top_y_2 = rb2->collider.y;
 			if (left_x_1 < left_x_2 + rb2->collider.w && left_x_1 + rb1->collider.w > left_x_2 &&

@@ -7,9 +7,11 @@ namespace MouseClickCheck {
 
 	extern bool* mouse_click;
 	void SetMouseClick(bool mouse);
+	bool GetMouseClick();
 
 	extern bool* change_scene;
 	void changeScene(bool sceneChange);
+	bool GetChangeScene();
 }
 
 #endif

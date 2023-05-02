@@ -28,7 +28,8 @@ int main(int argc, char *argv[])
     
     Debug::SetDebugActive();
 
-    MouseClickCheck::SetMouseClick(false);
+    bool mouseClick = false;    
+    MouseClickCheck::mouse_click = &mouseClick;
 
     EngineManager Engine(windowName.c_str());
 
@@ -81,16 +82,16 @@ int main(int argc, char *argv[])
             }
             else if (event.type == SDL_MOUSEBUTTONDOWN)
             { 
-                Debug::Log("You clicked me!");
+                //Debug::Log("You clicked me!");
                 Engine.input->mouse_clicked = true;
-                MouseClickCheck::SetMouseClick(true);
+                mouseClick = true;
                 break;
             }
             else if (event.type == SDL_MOUSEBUTTONUP)
             {
-                Debug::Log("You let go!");
+                //Debug::Log("You let go!");
                 Engine.input->mouse_clicked = false;
-                MouseClickCheck::SetMouseClick(false);
+                mouseClick = false;
                 break;
             }
         } // end of handling event.

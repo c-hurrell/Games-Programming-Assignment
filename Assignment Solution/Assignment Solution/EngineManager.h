@@ -11,6 +11,7 @@
 #include "Debug.h"
 #include "ShapeRendering.h"
 #include "Input.h"
+#include "MouseClickCheck.h"
 // Scenes
 #include "Scene.h" // <- Base Class for all scenes
 #include "SplashScreen.h" // <- Plays at launch
@@ -34,6 +35,8 @@ public:
 	SDL_Window* window;
 	SDL_Renderer* renderer;
 	InputHandler* input;
+
+	bool changeScene = false;
 
 	Scene* current_scene = nullptr;
 	vector<Scene*> scenes;
