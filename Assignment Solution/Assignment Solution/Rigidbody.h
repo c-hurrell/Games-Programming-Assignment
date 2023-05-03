@@ -41,6 +41,7 @@ public:
 
     void Start() override;
     void Update() override;
+    void TransformUpdate();
     void OnEnable() override;
     void OnDisable() override;
 

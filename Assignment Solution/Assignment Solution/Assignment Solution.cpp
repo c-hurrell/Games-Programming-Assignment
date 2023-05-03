@@ -5,12 +5,15 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <chrono>
+#include <ctime> 
 
 // Rename this to mouse cursor tracker
 #include "Input.h"
 #include "AliEngine.h"
 #include "Debug.h"
 #include"MouseClickCheck.h"
+#include "DeltaTime.h"
 
 // Game background audio
 // https://tones.wolfram.com/generate/GItzUqjRjPvqDRb0tXu3dhbqsofIb40HrWDWYFGY9JX1g9
@@ -31,6 +34,9 @@ int main(int argc, char *argv[])
 {
     bool debugToggle = false;
     bool ticksToggle = false;
+    std::chrono::steady_clock::time_point lastUpdate;
+    float deltaTime;
+    DeltaTime::deltaTime = &deltaTime;
     Debug::SetDebugActive();
     Debug::LogTicks();
 
@@ -150,7 +156,9 @@ int main(int argc, char *argv[])
         {
             ticksToggle = false;
         }
-
+        auto now = std::chrono::steady_clock::now();
+        deltaTime = std::chrono::duration_cast<std::chrono::microseconds>(now - lastUpdate).count() / 1000000.0f;
+        lastUpdate = now;
 
     }
     Engine.Exit();

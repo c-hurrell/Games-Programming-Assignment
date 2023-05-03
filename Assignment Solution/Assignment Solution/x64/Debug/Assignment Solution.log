@@ -1,4 +1,26 @@
-﻿  SplashScreen.cpp
-C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\SplashScreen.cpp(13,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\SplashScreen.cpp(17,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+﻿  Assignment Solution.cpp
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Assignment Solution.cpp(71,21): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Assignment Solution.cpp(76,26): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\Assignment Solution.cpp(81,23): warning C4244: 'argument': conversion from 'float' to 'Uint32', possible loss of data
+  DeltaTime.cpp
+  EngineManager.cpp
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\EngineManager.cpp(38,38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\EngineManager.cpp(38,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  GameManager.cpp
+  GameScene.cpp
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\GameScene.cpp(13,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\GameScene.cpp(17,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Meepling.cpp
+  MeeplingScript.cpp
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\MeeplingScript.cpp(16,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\MeeplingScript.cpp(17,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\MeeplingScript.cpp(18,31): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\MeeplingScript.cpp(19,43): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\MeeplingScript.cpp(22,11): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\MeeplingScript.cpp(23,11): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\MeeplingScript.cpp(41,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\MeeplingScript.cpp(42,12): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\MeeplingScript.cpp(104,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Projects\Games-Programming-Assignment\Assignment Solution\Assignment Solution\MeeplingScript.cpp(105,34): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
   Assignment Solution.vcxproj -> C:\Projects\Games-Programming-Assignment\Assignment Solution\x64\Debug\Assignment Solution.exe

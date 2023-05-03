@@ -16,6 +16,8 @@ public:
     int powerCooldown = 15;
     bool powerActive = false;
 
+    int frame_count = 0;
+
     SDL_Texture* snipeTexture;
     /*SDL_Texture* smiteTexture_1;
     SDL_Texture* smiteTexture_2;
@@ -35,6 +37,7 @@ public:
     void SetPos();
     void ActivatePower();
     void EnableComponents(bool enable);
+    void UpdateCompNow();
     void powerUse();
 };
 

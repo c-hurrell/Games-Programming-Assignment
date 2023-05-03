@@ -123,6 +123,12 @@
     <ClCompile Include="PowerScript.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeltaTime.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Transform2D.h">
@@ -185,12 +191,6 @@
     <ClInclude Include="Collision.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Wall.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MouseClickCheck.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Logo.h">
       <Filter>Header Files\SplashScreen\LogoScripts</Filter>
     </ClInclude>
@@ -206,17 +206,29 @@
     <ClInclude Include="AliEngine.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
+    <ClInclude Include="DeltaTime.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseClickCheck.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Header Files\GameScene</Filter>
+    </ClInclude>
     <ClInclude Include="Meepling.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\GameScene</Filter>
     </ClInclude>
     <ClInclude Include="MeeplingScript.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\GameScene</Filter>
     </ClInclude>
     <ClInclude Include="Power.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\GameScene</Filter>
     </ClInclude>
     <ClInclude Include="PowerScript.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>Header Files\GameScene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

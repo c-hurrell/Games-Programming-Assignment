@@ -23,16 +23,20 @@ void Rigidbody::Start()
 
 void Rigidbody::Update()
 {
-	Vector2 windowSize = TextureManager::GetWindowSize();
-	collider.w = transform2D->width * transform2D->scale; 
-	collider.h = transform2D->height * transform2D->scale;
-	collider.x = ((transform2D->posX / 800) * windowSize.x) - (collider.w / 2); // -(TextureManager::origin.x * (dest->w / 800 * windowSize.x) / 800);
-	collider.y = ((transform2D->posY / 600) * windowSize.y) - (collider.h / 2);
+	TransformUpdate();
 
 	if (collisions.empty() == false)
 	{
 		collisionCheck = true;
 	}
+}
+void Rigidbody::TransformUpdate()
+{
+	Vector2 windowSize = TextureManager::GetWindowSize();
+	collider.w = transform2D->width * transform2D->scale;
+	collider.h = transform2D->height * transform2D->scale;
+	collider.x = ((transform2D->posX / 800) * windowSize.x) - (collider.w / 2); // -(TextureManager::origin.x * (dest->w / 800 * windowSize.x) / 800);
+	collider.y = ((transform2D->posY / 600) * windowSize.y) - (collider.h / 2);
 }
 
 void Rigidbody::OnEnable()

@@ -116,5 +116,10 @@ void MeeplingScript::Die()
 	animateCheck = 0;
 	frameCount = 0;
 	Debug::Log("Meeple has died");
-	gameObject->DisableObject();
+	
+}
+void MeeplingScript::EnableSelf(bool enable)
+{
+	gameObject->rb->IsActive = enable;
+	gameObject->rb->IsActive = enable;
 }

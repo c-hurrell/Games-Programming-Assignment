@@ -28,5 +28,6 @@ public:
     void OnDisable() override;
 
     void Die();
+    void EnableSelf(bool enable);
 };
 
