@@ -47,7 +47,7 @@ void PowerScript::SetPower()
 		gameObject->transform2D->width = 25;
 		gameObject->transform2D->height = 25;
 		gameObject->sprite->texture = snipeTexture;
-		UpdateCompNow();
+		//UpdateCompNow();
 		powerCooldown = 15;
 	}
 	if (MouseClickCheck::GetKeyState(SDLK_2))
@@ -63,7 +63,7 @@ void PowerScript::SetPower()
 		gameObject->transform2D->width = 50;
 		gameObject->transform2D->height = 50;
 		gameObject->sprite->texture = shockwaveTexture_1;
-		UpdateCompNow();
+		//UpdateCompNow();
 		powerCooldown = 120;
 	}
 }
@@ -130,7 +130,7 @@ void PowerScript::powerUse()
 				gameObject->transform2D->width = 25;
 				gameObject->transform2D->height = 25;
 				gameObject->sprite->texture = snipeTexture;
-				UpdateCompNow();
+				//UpdateCompNow();
 			}
 			break;
 		case 2:
@@ -149,28 +149,28 @@ void PowerScript::powerUse()
 				gameObject->transform2D->width = 150;
 				gameObject->transform2D->height = 150;
 				gameObject->sprite->texture = shockwaveTexture_1;
-				UpdateCompNow();
+				//UpdateCompNow();
 			}
 			else if (cooldown <= 110)
 			{
 				gameObject->transform2D->width = 140;
 				gameObject->transform2D->height = 140;
 				gameObject->sprite->texture = shockwaveTexture_3;
-				UpdateCompNow();
+				//UpdateCompNow();
 			}
 			else if (cooldown <= 115)
 			{
 				gameObject->transform2D->width = 125;
 				gameObject->transform2D->height = 125;
 				gameObject->sprite->texture = shockwaveTexture_2;
-				UpdateCompNow();
+				//UpdateCompNow();
 			}
 			else
 			{
 				gameObject->transform2D->width = 75;
 				gameObject->transform2D->height = 75;
 				gameObject->sprite->texture = shockwaveTexture_1;
-				UpdateCompNow();
+				//UpdateCompNow();
 			}
 			
 			

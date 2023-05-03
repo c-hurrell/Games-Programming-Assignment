@@ -3,10 +3,12 @@
 
 #include "SDL.h"
 #include "SDL_ttf.h"
+#include "SDL_mixer.h"
 #include "SZ_Timer.h"
 #include "windows.h"
 
 //#include "MouseClickCheck.h"
+#include "AudioManager.h"
 #include "TextureManager.h"
 #include "Debug.h"
 #include "ShapeRendering.h"

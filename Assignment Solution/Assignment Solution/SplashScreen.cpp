@@ -2,6 +2,7 @@
 
 SplashScreen::SplashScreen() : Scene("SplashScreen")
 {
+	CreateMouseGameObject();
 	int posValx = 0;
 	int posValy = 0;
 	Debug::Log("Generating Walls");
@@ -26,4 +27,8 @@ SplashScreen::SplashScreen() : Scene("SplashScreen")
 	AddGameObject<Logo>();
 	AddGameObject<LogoText>()->rb->IsActive = false;
 	AddGameObject<TextBoxHowToPlay>()->rb->IsActive = false;
+}
+void SplashScreen::SceneUpdate()
+{
+
 }

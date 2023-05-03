@@ -4,10 +4,11 @@ GameScene::GameScene() : Scene()
 {
 	int posValx = 0;
 	int posValy = 0;
+	AddGameObject<Power>();
 	Debug::Log("Generating Walls");
 	for (int i = 0; i < 2; i++)
 	{
-		AddGameObject<Power>();
+		
 		GameObject* wH = AddGameObject<WallHorizontal>();
 		wH->transform2D->posX = 400;
 		wH->transform2D->posY = posValy;
@@ -22,9 +23,43 @@ GameScene::GameScene() : Scene()
 		posValx = 800;
 		posValy = 600;
 	}
+	
 	for (int i = 0; i < numberOfMeeplings; i++)
 	{
-		AddGameObject<Meepling>();
+		meeplings.push_back(AddGameObject<Meepling>());
 	}
+	for (GameObject* meepling : meeplings)
+	{
+		Component* m = meepling->GetComponent("MeeplingScript");
+		mees.push_back(static_cast<MeeplingScript*>(m));
+	}
+	gm = AddGameObject<GameManager>();
+	meeplings.clear();
+	AddGameObject<PowerUp>();
+}
+
+void GameScene::SceneUpdate()
+{
 	
+	for (MeeplingScript* ms : mees)
+	{
+		if (ms->diedThisFrame)
+		{
+			gm->gms->numDiedThisFrame += 1;
+		}
+
+	}
+	if (gm->gms->bonus == true && doubleMeeplings == false)
+	{
+		for (int i = 0; i < numberOfMeeplings; i++)
+		{
+			meeplings.push_back(AddGameObject<Meepling>());
+		}
+		for (GameObject* meepling : meeplings)
+		{
+			Component* m = meepling->GetComponent("MeeplingScript");
+			mees.push_back(static_cast<MeeplingScript*>(m));
+		}
+		doubleMeeplings = true;
+	}
 }

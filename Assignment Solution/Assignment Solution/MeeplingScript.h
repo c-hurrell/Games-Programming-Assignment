@@ -1,7 +1,9 @@
 #pragma once
-#include "Component.h"
 #include "Transform2D.h"
 #include "TextureManager.h"
+#include "DeltaTime.h"
+
+
 class MeeplingScript :
     public Component
 {
@@ -10,6 +12,7 @@ public:
     int maxVelocity = 4;
 
     int animateCheck = 0;
+    int respawnTimer = 0;
 
     Vector2 goal;
     SDL_Texture* meepleLeft;
@@ -19,6 +22,8 @@ public:
     
     bool walking = true;
     bool isFacingLeft = false;
+    bool dead = false;
+    bool diedThisFrame = false;
 
     MeeplingScript();
 

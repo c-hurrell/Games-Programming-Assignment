@@ -4,7 +4,7 @@ Scene::Scene(string scene_name)
 {
 	tag = scene_name;
 	Debug::Log("Loading Scene");
-	CreateMouseGameObject();
+	//CreateMouseGameObject();
 }
 Scene::~Scene()
 {
@@ -29,6 +29,7 @@ void Scene::Update()
 	{
 		gameObject->Update();
 	}
+	SceneUpdate();
 }
 void Scene::Render(SDL_Renderer* renderer)
 {
@@ -38,6 +39,19 @@ void Scene::Render(SDL_Renderer* renderer)
 	}
 }
 
+
+vector<GameObject*> Scene::FindObjectsWithTag(string tag)
+{
+	vector<GameObject*> foundObjects;
+	for (GameObject* gameObject : gameObjects)
+	{
+		if (gameObject->tag == tag)
+		{
+			foundObjects.push_back(gameObject);
+		}
+	}
+	return foundObjects;
+}
 
 void Scene::CreateMouseGameObject()
 {

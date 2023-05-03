@@ -2,6 +2,7 @@
 
 MeeplingScript::MeeplingScript()
 {
+	tag = "MeeplingScript";
 	meepleLeft = TextureManager::LoadTexture("assets/MeepleLeft.png");
 	meepleRight = TextureManager::LoadTexture("assets/MeepleRight.png");
 	meepleWalkingLeft = TextureManager::LoadTexture("assets/MeepleLeftWalking.png");
@@ -25,12 +26,27 @@ void MeeplingScript::Start()
 
 void MeeplingScript::Update()
 {
+	diedThisFrame = false;
 	for (GameObject* collision : gameObject->rb->collisions)
 	{
 		if (collision->tag == "Power" && frameCount >= 1)
 		{
 			Die(); // Tells meepling to die
 			return;
+		}
+	}
+	if (dead == true)
+	{
+		if (respawnTimer <= 0)
+		{
+			Debug::Log("Meepling has respawned");
+			EnableSelf(true);
+			OnEnable();
+			dead = false;
+		}
+		else
+		{
+			respawnTimer -= DeltaTime::getDeltaTime();
 		}
 	}
 	if ((goal.x + 2 >= gameObject->transform2D->posX && goal.x - 2 <= gameObject->transform2D->posX) 
@@ -104,6 +120,10 @@ void MeeplingScript::OnEnable()
 	gameObject->transform2D->posX = randomX;
 	gameObject->transform2D->posY = randomY;
 	frameCount = 0;
+	randomX = 50 + (rand() % 700);
+	randomY = 50 + (rand() % 500);
+	goal.x = randomX;
+	goal.y = randomY;
 }
 
 void MeeplingScript::OnDisable()
@@ -113,13 +133,17 @@ void MeeplingScript::OnDisable()
 
 void MeeplingScript::Die()
 {
+	diedThisFrame = true;
+	dead = true;
 	animateCheck = 0;
 	frameCount = 0;
-	Debug::Log("Meeple has died");
+	respawnTimer = 500;
+	Debug::Log("Meepling has died");
+	EnableSelf(false);
 	
 }
 void MeeplingScript::EnableSelf(bool enable)
 {
-	gameObject->rb->IsActive = enable;
+	gameObject->sprite->IsActive = enable;
 	gameObject->rb->IsActive = enable;
 }

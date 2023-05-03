@@ -14,8 +14,10 @@
 #include "Debug.h"
 #include"MouseClickCheck.h"
 #include "DeltaTime.h"
+#include "AudioManager.h"
 
 // Game background audio
+#include "SDL_mixer.h"
 // https://tones.wolfram.com/generate/GItzUqjRjPvqDRb0tXu3dhbqsofIb40HrWDWYFGY9JX1g9
 
 
@@ -34,12 +36,20 @@ int main(int argc, char *argv[])
 {
     bool debugToggle = false;
     bool ticksToggle = false;
+    bool muteToggle = false;
+    bool mute = false;
+    int volume = 100;
+
+    AudioManager::volume = &volume;
+    AudioManager::mute = &mute;
+
     std::chrono::steady_clock::time_point lastUpdate;
     float deltaTime;
     DeltaTime::deltaTime = &deltaTime;
     Debug::SetDebugActive();
     Debug::LogTicks();
 
+    
     bool mouseClick = false;    
     MouseClickCheck::mouse_click = &mouseClick;
 
@@ -57,6 +67,7 @@ int main(int argc, char *argv[])
 
     while (!done)
     {
+        
         aTimer.resetTicksTimer(); // resets a frame timer to zero
         
         Engine.Input();
@@ -156,12 +167,33 @@ int main(int argc, char *argv[])
         {
             ticksToggle = false;
         }
+        if (keymap[SDLK_m])
+        {
+            if (!muteToggle)
+            {
+                if (volume > 0)
+                {
+                    Debug::Log("Muting Audio");
+                    volume = 0;
+                }
+                else
+                {
+                    Debug::Log("Unmutting Audio");
+                    volume = 100;
+                }
+            }
+        }
+        else
+        {
+            muteToggle = false;
+        }
         auto now = std::chrono::steady_clock::now();
         deltaTime = std::chrono::duration_cast<std::chrono::microseconds>(now - lastUpdate).count() / 1000000.0f;
         lastUpdate = now;
 
     }
     Engine.Exit();
+   
 
 
     return 0;

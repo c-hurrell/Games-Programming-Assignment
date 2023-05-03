@@ -20,11 +20,32 @@ EngineManager::EngineManager(const char* name, int posX, int posY, int width, in
         Debug::Error("Something went wrong...");
     }
 
+    //Mix_Init(MIX_INIT_MP3);
+
+    
+
     window = SDL_CreateWindow(name, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_RESIZABLE);
     Debug::Log("AliEngine window launched");
 
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     Debug::Log("Renderer active");
+
+    Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024);
+
+
+    //"assets/GameBackgroundMusic.mp3"
+    //"assets/wowowowowowowow-103214.mp3"
+    Mix_Music* backgroundMusic = Mix_LoadMUS("assets/GameBackgroundMusic.wav"); // This won't load music for some reason
+
+    if (backgroundMusic == nullptr)
+    {
+        Debug::Error("Music not found!");
+    }
+
+
+
+    Mix_VolumeMusic(*AudioManager::volume);
+    Mix_PlayMusic(backgroundMusic, -1);
 
     //SDL_RenderSetLogicalSize(renderer, width, height);
 
@@ -70,6 +91,14 @@ void EngineManager::Input()
             SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN_DESKTOP);
         }
     }
+    if (*AudioManager::mute == false)
+    {
+        Mix_VolumeMusic(*AudioManager::volume);
+    }
+    else
+    {
+        Mix_VolumeMusic(*AudioManager::volume);
+    }
 }
 void EngineManager::Update()
 {
@@ -103,5 +132,6 @@ void EngineManager::Exit()
 
     SDL_DestroyWindow(window);
 
+    Mix_Quit();
     SDL_Quit();
 }

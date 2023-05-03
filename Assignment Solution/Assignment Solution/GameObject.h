@@ -13,6 +13,7 @@
 #include "PlayerMouseInput.h"
 #include "Text.h"
 #include "Rigidbody.h"
+//#include "GameManagerScript.h" // This is causing errors
 
 using namespace std;
 

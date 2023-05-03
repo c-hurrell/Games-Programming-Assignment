@@ -23,6 +23,8 @@ public:
 	void Update();
 	void Render(SDL_Renderer* renderer);
 
+	virtual void SceneUpdate() = 0;
+
 	CollisionHandler co;
 
 	// All the GameObjects
@@ -32,7 +34,7 @@ public:
 	void AddGameObject(GameObject gameObject);
 
 	// GameObject Functions
-	void FindObjectWithTag(string tag);
+	vector<GameObject*> FindObjectsWithTag(string tag);
 	void DestroyObjectsWithTag(string tag);
 	void DestroyObject(GameObject* object);
 

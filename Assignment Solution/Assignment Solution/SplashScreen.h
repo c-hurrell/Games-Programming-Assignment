@@ -14,6 +14,7 @@ class SplashScreen :
 {
 public:
     SplashScreen();
+    void SceneUpdate() override;
     ~SplashScreen() = default;
 };
 

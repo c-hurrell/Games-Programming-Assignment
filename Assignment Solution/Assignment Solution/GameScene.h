@@ -7,11 +7,14 @@
 #include "GameManager.h"
 #include "Meepling.h"
 #include "Power.h"
+#include "PowerUp.h"
+#include "MeeplingScript.h"
 // POWER - SMITE / REMOVE?
 // SNIPE - ADDED
 // POWER - SHOCKWAVE  - ADDED
 // 
 // HOUSE OBJECT? -> not needed for gameplay possible remove
+
 
 class GameScene :
     public Scene
@@ -19,6 +22,12 @@ class GameScene :
 public:
     GameScene();
 
+    void SceneUpdate() override;
+
     int numberOfMeeplings = 100;
+    bool doubleMeeplings = false;
+    GameManager* gm = nullptr;
+    vector<Meepling*> meeplings;
+    vector<MeeplingScript*> mees;
 };
 
