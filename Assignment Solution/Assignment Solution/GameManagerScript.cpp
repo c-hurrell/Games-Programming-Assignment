@@ -11,8 +11,6 @@ void GameManagerScript::Start()
 
 void GameManagerScript::Update()
 {
-	
-	
 	if (timer <= 0)
 	{
 		if (score >= 250 && !bonus)
@@ -28,6 +26,8 @@ void GameManagerScript::Update()
 			gameObject->text->lines[0] = "!!! GAME OVER !!!";
 			gameObject->text->lines[1] = "TIME LEFT: " + to_string(int(timer));
 			gameObject->text->lines[2] = "SCORE: " + to_string(score);
+			Mix_HaltMusic();
+			Mix_PlayMusic(endGameMusic, -1);
 		}
 	}
 	else

@@ -40,6 +40,7 @@ public:
 	InputHandler* input;
 
 	bool changeScene = false;
+	bool windowToggle = false;
 
 	Scene* current_scene = nullptr;
 	vector<Scene*> scenes;

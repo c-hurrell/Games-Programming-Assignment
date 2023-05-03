@@ -18,6 +18,7 @@ public:
     float powerUpTime = 0;
 
     Mix_Chunk* bonusLevelSound = nullptr;
+    //Mix_Music* endGameMusic = nullptr; removed
 
     bool bonus = false;
 

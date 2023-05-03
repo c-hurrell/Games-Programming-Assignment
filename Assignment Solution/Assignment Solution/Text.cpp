@@ -37,8 +37,8 @@ void Text::RenderText()
 	int i, character, x, y;
 	if (transform2D != nullptr)
 	{
-		x = (transform2D->posX / 800 * windowSize.x) - (transform2D->width/2);
-		y = (transform2D->posY / 600 * windowSize.y) - (transform2D->height/2);
+		x = (transform2D->posX) - (transform2D->width/2);
+		y = (transform2D->posY) - (transform2D->height/2);
 	}
 	else
 	{
@@ -79,7 +79,7 @@ void Text::RenderText()
 		// After line is done reset x
 		if (transform2D != nullptr)
 		{
-			x = (transform2D->posX / 800 * windowSize.x) - (transform2D->width / 2);
+			x = (transform2D->posX) - (transform2D->width / 2);
 		}
 		else
 		{

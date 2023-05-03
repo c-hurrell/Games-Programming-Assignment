@@ -56,8 +56,8 @@ void InputHandler::GetMousePos()
 
 	//Debug::Log("WindowX", windowSize.x);
 
-	dest->x = ((fx / 800) * windowSize.x) - (dest->w / 2); // -(TextureManager::origin.x * (dest->w / 800 * windowSize.x) / 800);
-	dest->y = ((fy / 600) * windowSize.y) - (dest->h / 2); // -(TextureManager::origin.y * (dest->h / 600 * windowSize.y) / 600);
+	dest->x = (fx) - (dest->w / 2); // -(TextureManager::origin.x * (dest->w / 800 * windowSize.x) / 800);
+	dest->y = (fy) - (dest->h / 2); // -(TextureManager::origin.y * (dest->h / 600 * windowSize.y) / 600);
 
 	//Debug::Log("DestX", dest->x);
 }

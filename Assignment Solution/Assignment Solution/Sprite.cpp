@@ -25,8 +25,8 @@ void Sprite::Start()
 void Sprite::Update()
 {
 	Vector2 windowSize = TextureManager::GetWindowSize();
-	dest->x = (transform2D->posX / 800 * windowSize.x) - (transform2D->width / 2);
-	dest->y = (transform2D->posY / 600 * windowSize.y) - (transform2D->height / 2); // -(TextureManager::origin.y * (transform2D->height * transform2D->scale) / 600);
+	dest->x = (transform2D->posX ) - (transform2D->width / 2);
+	dest->y = (transform2D->posY ) - (transform2D->height / 2); // -(TextureManager::origin.y * (transform2D->height * transform2D->scale) / 600);
 	dest->w = (transform2D->width * transform2D->scale); // Removed as none of my objects will change size during gameplay currently
 	dest->h = (transform2D->height * transform2D->scale);
 

@@ -12,7 +12,7 @@ EngineManager::EngineManager(const char* name, int posX, int posY, int width, in
 
     EngineManager::current_scene;
     //Debug::SetDebugActive();
-    
+    windowToggle = false;
     
     MouseClickCheck::change_scene = &changeScene;
 
@@ -48,7 +48,7 @@ EngineManager::EngineManager(const char* name, int posX, int posY, int width, in
     Mix_VolumeMusic(*AudioManager::volume);
     Mix_PlayMusic(backgroundMusic, -1);
 
-    //SDL_RenderSetLogicalSize(renderer, width, height);
+    SDL_RenderSetLogicalSize(renderer, width, height);
 
     // Make sure all SDL Renderer stuff is set up
 
@@ -79,18 +79,26 @@ void EngineManager::Input()
     
     if (*MouseClickCheck::mouse_click == true)
     {
-        Debug::Log("Mouse click registered");
+        //Debug::Log("Mouse click registered");
     }
     if (MouseClickCheck::GetKeyState(SDLK_ESCAPE))
     {
-        auto flag = SDL_GetWindowFlags(window);
-        auto is_fullscreen = flag & SDL_WINDOW_FULLSCREEN;
-        if (is_fullscreen == SDL_WINDOW_FULLSCREEN) {
-            SDL_SetWindowFullscreen(window, 0);
+        if (!windowToggle)
+        {
+            auto flag = SDL_GetWindowFlags(window);
+            auto is_fullscreen = flag & SDL_WINDOW_FULLSCREEN;
+            if (is_fullscreen == SDL_WINDOW_FULLSCREEN) {
+                SDL_SetWindowFullscreen(window, 0);
+            }
+            else {
+                SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN_DESKTOP);
+            }
         }
-        else {
-            SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN_DESKTOP);
-        }
+        windowToggle = true;
+    }
+    else
+    {
+        windowToggle = false;
     }
     if (*AudioManager::mute == false)
     {

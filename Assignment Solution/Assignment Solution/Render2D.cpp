@@ -25,8 +25,8 @@ void Render2D::OnDisable()
 void Render2D::RenderShape(SDL_Renderer* renderer)
 {
 	Vector2 windowSize = TextureManager::GetWindowSize();
-	int posX = (transform2D->posX / 800 * windowSize.x) - transform2D->width / 2;
-	int posY = (transform2D->posY / 600 * windowSize.y) - transform2D->height / 2;
+	int posX = (transform2D->posX) - transform2D->width / 2;
+	int posY = (transform2D->posY) - transform2D->height / 2;
 	switch (shape)
 	{
 	case Rectangle:
