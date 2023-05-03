@@ -175,11 +175,13 @@ int main(int argc, char *argv[])
                 {
                     Debug::Log("Muting Audio");
                     volume = 0;
+                    mute = true;
                 }
                 else
                 {
                     Debug::Log("Unmutting Audio");
                     volume = 100;
+                    mute = false;
                 }
             }
         }

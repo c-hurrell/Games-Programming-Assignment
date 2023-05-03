@@ -10,15 +10,9 @@ TextBoxHowToPlay::TextBoxHowToPlay() : GameObject()
 	text->fontType = 1;
 	text->AddLine("HOW TO PLAY : ");
 	text->AddLine("PRESS NUMBER TO SELECT POWER");
-	text->AddLine("1 - SMITE");
+	text->AddLine("1 - SNIPE");
 	text->AddLine("2 - SHOCKWAVE");
-	text->AddLine("3 - CLUSTER");
 	text->AddLine("LEFT CLICK WITH THE MOUSE TO ACTIVATE POWER");
 	text->AddLine("AIM FOR MEEPLINGS TO SCORE POINTS");
 	text->AddLine("CLICK THE ALIEN TO START");
-
-	/*for (string txt : text->lines)
-	{
-		Debug::Log(txt);
-	}*/
 }

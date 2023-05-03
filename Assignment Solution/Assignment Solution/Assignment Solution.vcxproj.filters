@@ -138,6 +138,9 @@
     <ClCompile Include="PowerUp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PowerUpScript.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Transform2D.h">
@@ -239,14 +242,17 @@
     <ClInclude Include="Wall.h">
       <Filter>Header Files\GameScene</Filter>
     </ClInclude>
-    <ClInclude Include="GameManagerScript.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="AudioManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PowerUp.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PowerUpScript.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManagerScript.h">
+      <Filter>Header Files\GameScene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

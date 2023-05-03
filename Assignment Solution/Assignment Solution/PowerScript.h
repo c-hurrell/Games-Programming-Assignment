@@ -3,6 +3,8 @@
 #include "Component.h"
 #include "Transform2D.h"
 #include "MouseClickCheck.h"
+#include "SDL_mixer.h"
+#include "AudioManager.h"
 
 class Power;
 
@@ -25,6 +27,10 @@ public:
     SDL_Texture* shockwaveTexture_1;
     SDL_Texture* shockwaveTexture_2;
     SDL_Texture* shockwaveTexture_3;
+
+    Mix_Chunk* snipe = nullptr;
+    Mix_Chunk* shockwave = nullptr;
+
 
     PowerScript();
 

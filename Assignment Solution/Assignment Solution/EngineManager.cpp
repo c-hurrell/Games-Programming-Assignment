@@ -42,6 +42,7 @@ EngineManager::EngineManager(const char* name, int posX, int posY, int width, in
         Debug::Error("Music not found!");
     }
 
+    Mix_AllocateChannels(4);
 
 
     Mix_VolumeMusic(*AudioManager::volume);

@@ -3,6 +3,7 @@
 
 #include "DeltaTime.h"
 #include "Transform2D.h"
+#include "AudioManager.h"
 
 
 class GameManagerScript :
@@ -14,6 +15,9 @@ public:
     int score = 0;
     int multiplier = 1;
     float timer = 45;
+    float powerUpTime = 0;
+
+    Mix_Chunk* bonusLevelSound = nullptr;
 
     bool bonus = false;
 

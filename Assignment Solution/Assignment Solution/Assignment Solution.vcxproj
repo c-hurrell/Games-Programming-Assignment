@@ -150,6 +150,7 @@
     <ClCompile Include="Power.cpp" />
     <ClCompile Include="PowerScript.cpp" />
     <ClCompile Include="PowerUp.cpp" />
+    <ClCompile Include="PowerUpScript.cpp" />
     <ClCompile Include="Render2D.cpp" />
     <ClCompile Include="Rigidbody.cpp" />
     <ClCompile Include="Scene.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="Power.h" />
     <ClInclude Include="PowerScript.h" />
     <ClInclude Include="PowerUp.h" />
+    <ClInclude Include="PowerUpScript.h" />
     <ClInclude Include="Render2D.h" />
     <ClInclude Include="Rigidbody.h" />
     <ClInclude Include="Scene.h" />

@@ -3,6 +3,7 @@
 LogoScript::LogoScript() : Component()
 {
 	tag = "LogoScript";
+	alienNoise = Mix_LoadWAV("assets/BonusLevelSound.wav");
 }
 
 void LogoScript::Start()
@@ -19,6 +20,7 @@ void LogoScript::Update()
 		{
 			if (collision->tag == "PlayerMouse")
 			{
+				Mix_PlayChannel(1, alienNoise, 1);
 				gameObject->sprite->SetTexture(red_alien_texture);
 				if (*MouseClickCheck::mouse_click == true)
 				{

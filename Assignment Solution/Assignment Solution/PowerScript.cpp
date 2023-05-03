@@ -6,6 +6,8 @@ PowerScript::PowerScript()
 	shockwaveTexture_1 = TextureManager::LoadTexture("assets/Shockwave1.png");
 	shockwaveTexture_2 = TextureManager::LoadTexture("assets/Shockwave2.png");
 	shockwaveTexture_3 = TextureManager::LoadTexture("assets/Shockwave3.png");
+	snipe = Mix_LoadWAV("assets/SnipeSound.wav");
+	shockwave = Mix_LoadWAV("assets/ShockwaveSound.wav");
 	
 }
 
@@ -51,12 +53,6 @@ void PowerScript::SetPower()
 		powerCooldown = 15;
 	}
 	if (MouseClickCheck::GetKeyState(SDLK_2))
-	{
-		current_power = 2; // Smite Power
-		Debug::Log("Smite Power Selected");
-		powerCooldown = 60;
-	}
-	if (MouseClickCheck::GetKeyState(SDLK_3))
 	{
 		current_power = 3; // Shockwave Power
 		Debug::Log("Shockwave Power Selected");
@@ -125,12 +121,16 @@ void PowerScript::powerUse()
 				powerActive = false;
 				SetPos();
 			}
-			else
+			else if (cooldown >= 14)
 			{
 				gameObject->transform2D->width = 25;
 				gameObject->transform2D->height = 25;
 				gameObject->sprite->texture = snipeTexture;
 				//UpdateCompNow();
+				if (*AudioManager::mute == false)
+				{
+					Mix_PlayChannel(-1, snipe, 0);
+				}
 			}
 			break;
 		case 2:
@@ -165,12 +165,16 @@ void PowerScript::powerUse()
 				gameObject->sprite->texture = shockwaveTexture_2;
 				//UpdateCompNow();
 			}
-			else
+			else if (cooldown <= 119)
 			{
 				gameObject->transform2D->width = 75;
 				gameObject->transform2D->height = 75;
 				gameObject->sprite->texture = shockwaveTexture_1;
 				//UpdateCompNow();
+				if (*AudioManager::mute == false)
+				{
+					Mix_PlayChannel(-1, shockwave, 0);
+				}
 			}
 			
 			

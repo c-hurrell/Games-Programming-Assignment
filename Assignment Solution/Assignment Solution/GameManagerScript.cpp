@@ -2,6 +2,7 @@
 
 GameManagerScript::GameManagerScript()
 {
+	bonusLevelSound = Mix_LoadWAV("assets/BonusLevelSound.wav");
 }
 
 void GameManagerScript::Start()
@@ -19,7 +20,7 @@ void GameManagerScript::Update()
 			timer = 15;
 			bonus = true;
 			gameObject->text->lines[0] = "BONUS ROUND!";
-
+			Mix_PlayChannel(-1, bonusLevelSound, 0);
 		}
 		else
 		{
@@ -37,6 +38,14 @@ void GameManagerScript::Update()
 		gameObject->text->lines[2] = "SCORE: " + to_string(score);
 	}
 	numDiedThisFrame = 0;
+	if (powerUpTime <= 0)
+	{
+		multiplier = 1;
+	}
+	else
+	{
+		powerUpTime -= DeltaTime::getDeltaTime();
+	}
 }
 
 void GameManagerScript::OnEnable()

@@ -35,7 +35,8 @@ GameScene::GameScene() : Scene()
 	}
 	gm = AddGameObject<GameManager>();
 	meeplings.clear();
-	AddGameObject<PowerUp>();
+	pu = AddGameObject<PowerUp>();
+	pus = pu->PUS;
 }
 
 void GameScene::SceneUpdate()
@@ -61,5 +62,15 @@ void GameScene::SceneUpdate()
 			mees.push_back(static_cast<MeeplingScript*>(m));
 		}
 		doubleMeeplings = true;
+	}
+	if (gm->gms->timer <= 40 && pus->powerUpSpawned == false && gm->gms->powerUpTime <= 0)
+	{
+		pus->SpawnPowerUp();
+	}
+	else if (pus->powerUpActive == true)
+	{
+		gm->gms->multiplier += 1;
+		gm->gms->powerUpTime = 5;
+		pus->powerUpActive = false;
 	}
 }

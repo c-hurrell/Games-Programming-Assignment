@@ -9,6 +9,7 @@
 #include "Power.h"
 #include "PowerUp.h"
 #include "MeeplingScript.h"
+#include "PowerUpScript.h"
 // POWER - SMITE / REMOVE?
 // SNIPE - ADDED
 // POWER - SHOCKWAVE  - ADDED
@@ -29,5 +30,7 @@ public:
     GameManager* gm = nullptr;
     vector<Meepling*> meeplings;
     vector<MeeplingScript*> mees;
+    PowerUp* pu = nullptr;
+    PowerUpScript* pus = nullptr;
 };
 
