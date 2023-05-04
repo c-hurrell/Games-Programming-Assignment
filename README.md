@@ -11,4 +11,6 @@ List of Improvements For AliEngine:
 
 -> Improvements on Collision AABB works fine but could work on fine tuning collision at somepoint post-assignment could switch to PhysX for handling and trying it out
 
+-> Revamp of Text component as its current method is limited in usage and causes issues.
+
 -> Will add more as needed
