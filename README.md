@@ -13,4 +13,8 @@ List of Improvements For AliEngine:
 
 -> Revamp of Text component as its current method is limited in usage and causes issues.
 
+-> Fix Glyph map
+
+-> Rendering add layers to the individual renderers so objects don't overlap other ones.
+
 -> Will add more as needed
